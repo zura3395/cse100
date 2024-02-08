@@ -1,6 +1,5 @@
-## CSE100/L Lab 1
+# CSE100/L Lab 1
 
-**CSE100/L Lab 1**  
 Martine Schlag  
 Winter 2024
 
