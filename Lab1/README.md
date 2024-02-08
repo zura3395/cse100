@@ -1,7 +1,7 @@
-# CSE100/L Lab 1
-
-**Martine Schlag**  
-**Winter 2024**
+CSE100/L Lab 1  
+Martine Schlag  
+Winter 2024
+-----
 
 **Pre-lab due:** Thursday January 11 9am PDT in Canvas/GradeScope
 
