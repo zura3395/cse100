@@ -7,7 +7,7 @@
 
 **Demo due:** Thursday January 11 (in-person demo by the end of your lab section)
 
-You should have already completed question 3 of the [prelab](prelab1.html) before proceeding with this.
+You should have already completed question 3 of the [prelab](https://classes.soe.ucsc.edu/cse100/Winter24/lab/lab1/prelab1.html) before proceeding with this.
 
 In this lab you will display an octal digit on the rightmost digit of the 7-segment display of the Basys 3 board.  
 The octal digit will correspond to the rightmost three switches.  
