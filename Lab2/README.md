@@ -183,8 +183,8 @@ You will create a module **hex7seg** which takes a 4-bit bus **n\[3:0\]** and pr
     h.  Your input waveforms must include values that produce every possible output (all 16 hex digits, 0 through F). Currently the simulation includes two values for the switches. Add additional lines to the testbench to generate stimuli to produce more values. Advance time by 500 ns in between each value (using #500;).
         
     i.  Simulate your testbench. You must also display the 8-bit bus output of your AddSub8 (see example the snapshot below) **without making them pins of your top level module !!!**.  
-        
-        ![](sim_shot.png)
+
+    ![](sim_shot.png)
         
     
 13.  Implement your design, configure the FPGA and demonstrate your design to one of the TAs. You must show the simulation wave window with the output bus of the AddSub8 displayed.
