@@ -1,0 +1,432 @@
+<html>
+<HEAD>
+   <TITLE>CSE100 Lab 2 - Winter 24 </TITLE>
+<META NAME="Author" CONTENT="Martine Schlag">
+<link rel="shortcut icon" href="/cse/classes/cse100/Fall23/slug-icon.gif">
+<H1> CSE100/L Winter 2024
+</H1>
+<HR>
+<TITLE>CSE100/L - Winter 24</TITLE>
+<img align="left" src="/cse/classes/cse100/Winter24/slug-icon.gif">
+(Last Update:
+              <!-- see man strftime for full format opts-->
+	                Tue Jan 16 08:53:50 2024 PST
+			  <!-- see man strftime for full format opts-->
+			    &nbsp &nbsp &nbsp Local time:
+			         Thu Feb  8 08:05:51 2024 PST
+				 )
+<HR>
+
+<p>
+<style>
+main {
+  max-width: 1000px;
+  min-width: 100px;
+  <!-- background-color: powderblue;-->
+}
+</style>
+
+
+</HEAD>
+<body bgcolor="#FFFFFE">   
+<main>
+&nbsp
+<p>
+<center> 
+<h2>CSE100 Lab 2 
+<br> Martine Schlag 
+<br> Winter 2024 
+</h2> 
+</center> 
+<p> 
+<br> (Last Update:        
+<!-- see man strftime for full format opts--> 	    
+Tue Jan 16 08:53:50 2024)
+</p><p> 
+<b>Prelab due:</b> Tuesday January 16 9am PST 
+</p><p> 
+<b>Demo due:</b> Thursday January 18 end of your section 
+</p><p> 
+</p><p> 
+Be sure to complete the <a href="prelab2.html">prelab</a> before beginning this assignment.
+</p><p> 
+In this lab you will implement
+</p><ul>
+<li> an 8-bit adder,
+</li><li> a 2-to-1 multiplexer for 8 bit buses,
+</li><li> a hex to 7segment encoder,
+</li><li> and an 8-bit adder/subtractor.
+</li></ul>
+These components will be used to implement an 
+an adder/subtractor component with inputs from the switches and pushbutton btnU.
+<br>The output of the adder/subtractor will be displayed on the
+the right two digits of the 7 segment display.
+<br>You will also learn to use bit vectors in Verilog (aka buses) and simulate your design.  
+<br>(In the pre-lab you read <a href="../buses/bus.html">Vectors and Buses in Verilog</a>
+and answered questions about buses.)
+<p>
+The adder/subtractor (symbol below) is a combinational circuit that calculates the sum or
+difference of two numbers represented in 8-bit two's complement.
+<br>(Appendix B.2 in our text covers two's complement if you need a refresher.)
+<p>
+When <b>sub</b> is 0, the output <b>S</b> is <b>a</b> + <b>b</b>,
+but
+when <b>sub</b> is 1, the output <b>S</b> is <b>a</b> - <b>b</b>,
+</p><center>
+<img width="300" src="AddSub8.jpg">
+</center>
+<br>
+The two 8-bit numbers, <b>a[7:0]</b> and <b>b[7:0]</b>,  will be provided by the switches 
+sw[15] to sw[8] and
+sw[7] to sw[0],
+respectively.
+<br>Pushbutton btnU will provide the input <b>sub</b> that determines
+whether the sum or difference of the two numbers is produced.
+<TR VALIGN="BOT"><TD ALIGN="CENTER" NOWRAP>sub</TD>
+<TD ALIGN="CENTER" NOWRAP> <b>a</b> </TD>
+<TD ALIGN="CENTER" NOWRAP> <b>a</b> in binary </TD>
+<TD ALIGN="CENTER" NOWRAP> <b>b</b> </TD>
+<TD ALIGN="CENTER" NOWRAP> <b>b</b> in binary </TD>
+<TD ALIGN="CENTER" NOWRAP> <b>S</b> </TD>
+<TD ALIGN="CENTER" NOWRAP> <b>S</b> in hex </TD>
+<TD ALIGN="CENTER" NOWRAP> ovfl </TD>
+</TR>
+<br>The result will be displayed in hex digits on the two rightmost digits of
+the seven segment display.
+</p><p> 
+The table below contains examples of inputs and outputs.
+
+<p>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=4 BORDER="1">
+<TR VALIGN="BOT"><TD ALIGN="CENTER" NOWRAP>sub</TD>
+<TD ALIGN="CENTER" NOWRAP> <b>a</b> </TD> 
+<TD ALIGN="CENTER" NOWRAP> <b>a</b> in binary </TD> 
+<TD ALIGN="CENTER" NOWRAP> <b>b</b> </TD> 
+<TD ALIGN="CENTER" NOWRAP> <b>b</b> in binary </TD> 
+<TD ALIGN="CENTER" NOWRAP> <b>S</b> </TD> 
+<TD ALIGN="CENTER" NOWRAP> <b>S</b> in hex </TD> 
+<TD ALIGN="CENTER" NOWRAP> ovfl </TD>
+</TR>
+<TR VALIGN="BOT">
+<TD ALIGN="CENTER" NOWRAP>0</TD> 
+<TD ALIGN="CENTER">8'd46 </sub> </TD>
+<TD ALIGN="CENTER">8'b00101110</sub> </TD>
+<TD ALIGN="CENTER">8'd4 </sub> </TD>
+<TD ALIGN="CENTER">8'b0000100</sub> </TD>
+<TD ALIGN="CENTER">8'd50</sub> </TD>
+<TD ALIGN="CENTER">8'h32</sub> </TD>
+<TD ALIGN="CENTER">0 </sub> </TD>
+</TR>
+<TR VALIGN="BOT">
+<TD ALIGN="CENTER" NOWRAP>1</TD> 
+<TD ALIGN="CENTER">8'd46 </sub> </TD>
+<TD ALIGN="CENTER">8'b00101110</sub> </TD>
+<TD ALIGN="CENTER">8'd4 </sub> </TD>
+<TD ALIGN="CENTER">8'b0000100</sub> </TD>
+<TD ALIGN="CENTER">8'd42</sub> </TD>
+<TD ALIGN="CENTER">8'h2A</sub> </TD>
+<TD ALIGN="CENTER">0 </sub> </TD>
+</TR>
+<TR VALIGN="BOT">
+<TD ALIGN="CENTER" NOWRAP>0</TD>
+<TD ALIGN="CENTER">-8'd46 </sub> </TD>
+<TD ALIGN="CENTER">8'b11010010</sub> </TD>
+<TD ALIGN="CENTER">-8'd4 </sub> </TD>
+<TD ALIGN="CENTER">8'b11111100</sub> </TD>
+<TD ALIGN="CENTER">8'd206 = -8'd50</sub> </TD>
+<TD ALIGN="CENTER">8'hCE</sub> </TD>
+<TD ALIGN="CENTER">0 </sub> </TD>
+</TR>
+<TR VALIGN="BOT">
+<TD ALIGN="CENTER" NOWRAP>1</TD>
+<TD ALIGN="CENTER">-8'd46 </sub> </TD>
+<TD ALIGN="CENTER">8'b11010010</sub> </TD>
+<TD ALIGN="CENTER">-8'd4 </sub> </TD>
+<TD ALIGN="CENTER">8'b11111100</sub> </TD>
+<TD ALIGN="CENTER">8'd224 = -8'd42</sub> </TD>
+<TD ALIGN="CENTER">8'hD6</sub> </TD>
+<TD ALIGN="CENTER">0 </sub> </TD>
+</TR>
+<TR VALIGN="BOT">
+<TD ALIGN="CENTER" NOWRAP>0</TD>
+<TD ALIGN="CENTER">8'd46 </sub> </TD>
+<TD ALIGN="CENTER">8'b00101110</sub> </TD>
+<TD ALIGN="CENTER">8'd90 </sub> </TD>
+<TD ALIGN="CENTER">8'b01011010</sub> </TD>
+<TD ALIGN="CENTER">8'd136= -8'd120</sub> </TD>
+<TD ALIGN="CENTER">8'h88</sub> </TD>
+<TD ALIGN="CENTER">1 </sub> </TD>
+</TR>
+</TABLE></DIV>
+</center>
+</p><p>
+Since 8 bits may
+not be enough for the result you should illuminate the <b>dp</b> segment 
+when there is an overflow. This occurs when two positive integers sum to more than 127
+or two negative integers sum to less than -128.
+Note that this needs to be detected
+by Add8 (it is not related to the final carry output).
+The overflow output should also be 1 when <b>b</b> is
+-128 and <b>sub</b> is 1, since it is 128 cannot be represented in two's complement with only 8 bits.
+</p><p> 
+The figure below contains a (partial) block diagram of the top level of your project.
+<br> (Some of the details have been left to you.)
+</p><center>
+<img width="600" src="lab2_overview.jpg">
+</center>
+<p>
+You will create separate modules for the multiplexer, full adder, 8-bit adder, adder/subtractor, and hex to 7-segment converter as described below.
+<br> (Question 2 of the pre-lab covers <a href="../hierarchy/hierarchy.html">
+creating hierarchy in your design with modules</a>.)
+<br><b> You may only use the "assign" statement and logic expressions with
+"&amp;", "|", "^", and "~"</b>.
+</p><p> 
+</p><p> 
+</p><h3> Multiplexer </h3> 
+<p> Your first task is to implement a 2-to-1 8-bit multiplexer.   
+<br> This can be a single assign statement using bit-vector operators.
+</p><p>
+</p><p> 
+</p><h3> Adder </h3> 
+<p> Build an 8-bit adder by first making a full adder module <tt>FA</tt>.
+<br>
+Your full adder <tt>FA</tt> will have three inputs bits: <tt>a</tt>, <tt>b</tt>, <tt>Cin</tt>.
+<br> It will have two outputs, <tt>s</tt> and Cout.
+<br> Assemble 8 of your FA modules to make your 8-bit adder:
+</p><pre> module Add8(
+  input [7:0] A,
+  input [7:0] B,
+  input Cin,
+  output [7:0] S,
+  output ovfl,
+  output Cout);
+</pre>
+Here the <tt>ovfl</tt> output should be 1 when adding the two positive numbers
+produces a negative number, or adding two negative numbers produces a positive number.
+<p>
+
+</p><h3> Adder/Subtractor </h3> 
+<p> The inputs to <b>AddSub8</b> are the two  8-bit two's complement
+numbers, <b>A[7:0]</b> and  <b>B[7:0]</b>, and the input <b>sub</b>. 
+<br>When <b>sub</b> =0, the output, <b>S[7:0]</b> should be 
+the sum of the two numbers, <b>A+B</b>, in two's complement.
+<br>When <b>sub</b> =1, the output is <b>A-B</b>
+in two's complement.
+</p><p></p><pre> module AddSub8(
+  input [7:0] A,
+  input [7:0] B,
+  input sub,
+  output [7:0] S,
+  output ovfl);
+</pre>
+<p>
+<br> You will also need to generate logic for the <b>ovfl</b> output.
+</p><p> 
+</p><p> 
+</p><h3> 7-Segment Converter </h3> 
+<p> You will create a module <b>hex7seg</b> which takes a 4-bit bus <b>n[3:0]</b> 
+and produces the 
+signals to control the 7 segment LEDS (<b>seg[6:0]</b>). This is simlar to Lab 1, 
+however this time your module will use buses for the input and output, 
+and display all 16 hex digits. (You should have the equations in your notebook from
+completing the pre-lab.)
+</p><center>
+<img src="7seg.gif"> 
+</center>
+<p> 
+</p><p> 
+</p><h3> Steps </h3> 
+<p> 
+</p><ol> 
+<li>
+Create a new project for Lab 2 (don't forget to add a fresh copy of the constraints file
+(<a href="../new_project/Basys3_Master.xdc">Basys3_Master.xdc</a>).
+<p>
+</p></li><li>Create a top level module with inputs,
+ <b>sw[15:0]</b>,
+ <b>btnU</b>,
+ <b>btnR</b>,
+ and <b>clkin</b>,
+<br> and outputs
+ <b>seg[6:0]</b>,
+ <b>dp</b>,
+ <b>an[3:0]</b>,
+ <b>led[15:0]</b>.
+<p>
+</p></li><li> In your top level module, you should have one instance of your <b>AddSub8</b> and two
+instances of <b>hex7seg</b>.
+<p> 
+</p></li><li> Connect the switches to the leds. (This is to allow you to detect 
+problems with the switches.)
+<p> 
+</p></li><li> Connect the lower 4 bits of your <b>AddSub8</b> output to one instance of <b>hex7seg</b> 
+and the upper 4 bits to the other instance of <b>hex7seg</b>.  
+<p> 
+</p></li><li> Add a signal (wire) called  <b>dig_sel</b>. Using the signal <b>dig_sel</b>, 
+and your multiplexer, produce the bit vector <b>seg[6:0]</b> by
+ <i>combining</i> the outputs of the two <b>hex7seg</b> modules
+so that when <b>dig_sel</b> is high, <b>seg[6:0]</b> is the output of one of 
+the two <b>hex7seg</b> and when <b>dig_sel</b> is low, 
+<b>seg[6:0]</b> is the output of the other <b>hex7seg</b>.
+<p> 
+</p></li><li> Using <b>dig_sel</b> arrange for the appropriate 7-segment display  to be selected 
+(either an[0] or an[1]) so that the value of your <b>AddSub8</b> result is displayed on 
+the two rightmost 7-segment digits in hex. 
+<p> 
+</p></li><li> Provide appropriate values for the remaining 7-segment controls (dp,an[2],an[3]). 
+<p> 
+</p></li><li> Download <a href="lab2_digsel.v">this verilog source</a> and save it as <b>lab2_digsel.v</b>. 
+<p> 
+</p></li><li> In the Vivado Project Manager use <b>Add Sources</b> to add this file to your project.
+<br> This Verilog source defines the following module
+<p></p><pre>module lab2_digsel(
+     input clkin,  // Basys3 clock
+     input greset,  //btnR
+     output digsel  // slow signal for 7-segment display controls
+     );
+</pre> 
+The output pin, <b>digsel</b> of alternates between high and low 
+at a low frequency.  
+<p>
+Add an instance of <b>lab2_digsel</b> to your top level and connect the ports of
+<b>lab2_digsel</b> as follows:
+&nbsp; &nbsp;   <tt>.clkin(clkin), .greset(btnR), .digsel(dig_sel) </tt>.
+</p><p> 
+</p></li><li>Now edit your constraints file.   Since we used the same names as 
+in the constraints file, you should only need to uncomment the lines corresponding
+to 
+ <b>sw[15:0]</b>,
+ <b>btnU</b>,
+ <b>btnR</b>,
+ <b>seg[6:0]</b>,
+ <b>dp</b>,
+ <b>an[3:0]</b>,
+ and <b>led[15:0]</b>.
+<br>For <b>clkin</b> uncomment the 3 lines below <tt>## Clock signal</tt> near the top
+of the constraint file and replace <b>clk</b> with <b>clkin</b> so that these lines
+are as below:
+<br><tt>
+<br>## Clock signal
+<br> set_property PACKAGE_PIN W5 [get_ports clkin]
+<br> &nbsp; &nbsp; &nbsp; &nbsp; 
+set_property IOSTANDARD LVCMOS33 [get_ports clkin]
+<br> &nbsp; &nbsp; &nbsp; &nbsp; 
+create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports clkin]
+</tt>
+<p> 
+</p></li><li> Simulate your design.
+<ol type="a">  
+<p>
+</p><li>
+In Yuja there is a video on using the simulator in Vivado called "Simulation Example."
+<br>It steps through simulating a multiplexor from creating the testbench to tracking
+down errors.
+<br> You can also skim <a href="../simulate/ug900-vivado-logic-simulation-minimized.pdf">this extracted
+material from the full document</a>, covering the basic commands you will need to control the
+simulator.
+<p>
+</p></li><li> Download this <a href="test_addsub.v">Verilog testbench</a>.
+<br> If Windows or your browser changes its extension from <tt>.v</tt> to <tt>.txt</tt>
+then you will need to change it back.
+<p>
+</p></li><li> Add this file as a source to your Vivado project.
+<br>(Make sure you selected the option to copy it into your project.)
+<p>
+</p></li><li> 
+You should now see the file in your Sources panel.
+<br> Right-click on it and select <b>Move to Simulation Sources</b> from the pop-up menu.
+<br> The file will disappear, but if you expand <b>sim1</b> under <b>Simulation Sources</b>
+you'll find it again.  This file is intended only for simulation;  it should not be implemented.
+<p>
+</p></li><li> Open <b>test_addsub.v</b> in Vivado and examine it.
+<br> This is a Verilog file in which one module, <b>test_addsub</b>, is defined.
+This module has no inputs or outputs.  Its sole reason for
+existence is to provide input values (more formally called test vectors) to the top module
+in your Lab 2 project and allow you to observe the outputs.
+<br>In <b>test_addsub</b>
+<ul>
+<li>the inputs/outputs connected to
+the top level module of the design are defined,
+</li><li>the top level module is instantiated,
+and
+</li><li> the values for the inputs are specified
+begining at time 0 in 
+<br><tt>initial</tt>
+<br><tt>begin</tt>
+<br> ....
+<br><tt>end</tt>
+<br> This is done by assigning values to the inputs and advancing time (<tt>#100;</tt>)
+in increments of 100 nanoseconds.
+</li></ul>
+<p>
+</p></li><li>Follow the instructions in the comments to add the test vectors you came up
+with in the pre-lab to the test bench. You may need to adjust the name of the
+top level module to match your design.
+<p>
+</p></li><li>Click on <b>Run Simulation</b> and select <b>Behavioral Simulation</b> (the
+first option in the menu). If there are no errors, the simulator will start up
+and you will see the same display as in the the guide your skimmed in Step 10. 
+<p>
+</p></li><li>
+Your input waveforms must include values that produce every 
+possible output (all 16 hex digits, 0 through F).   
+Currently the simulation includes two values for the switches.
+Add additional lines to the testbench to generate stimuli 
+to produce more values.
+Advance time by 500 ns in between each value (using <tt>#500;</tt>).
+<p>
+</p></li><li> Simulate your testbench.
+You must also display the 8-bit bus output of your AddSub8
+(see example the snapshot below)
+<b> without making them pins of your top level module 
+!!!</b>.
+<br>
+<center>
+<img width="500" src="sim_shot.png">
+</center>
+<p>
+</p></li></ol>
+<p> 
+</p></li><li>Implement your design, configure the FPGA and demonstrate your design to one of the TAs. 
+You must show the simulation wave window with the output bus of the AddSub8 displayed.
+<p>
+</p></li><li> Once your working design has been demonstrated, upload your
+<a href="../archive/archive.html">archived</a> project file
+(zip file) to the "Lab 2 project submission" assignment in Canvas.
+<br>(You can continue to improve your project if desired,
+but you should submit the version you just demonstrated.) 
+<p>
+</p><p> 
+</p></li><li>Remember to <a href="../archive/archive.html">archive</a> your project even if you are not done.
+Files left on the PC are not protected. 
+Should it become necessary to re-image that PC, its disks will be wiped clean. 
+The file you submitted in Canvas can serve as a backup, but if you have not
+submitted please backup the zip file somewhere safe.
+<p> 
+</p></li><li> <b>Important</b> Please remember to turn off the power to
+the Basys 3 board when you are done.  
+</li></ol> 
+<p> 
+
+</p>
+
+
+
+<HR><B>The CSE100/L Web:</B>
+<BR>Copyright 2024; Department of Computer Science and Engineering,
+University of California, Santa Cruz.
+
+<br>Portions of the CSE100/L Web may be reprinted or adapted for academic
+nonprofit purposes, providing the source is accurately quoted and duly
+credited.
+<ADDRESS>
+Comments to:
+<em>
+<a href="&#109;&#97;&#105;&#108;&#116;o:&#109;&#97;&#114;&#116;&#105;ne&#64;&#99;&#115;&#101;&#46;&#117;&#99;&#115;&#99;.&#101;&#100;&#117;">&#109;&#97;&#114;&#116;&#105;ne&#64;&#99;&#115;&#101;&#46;&#117;&#99;&#115;&#99;.&#101;&#100;&#117;</a>
+</em>
+</ADDRESS>
+
+
+
+</body></html>
