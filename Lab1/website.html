@@ -1,0 +1,198 @@
+<HTML>
+<HEAD>
+   <TITLE>CSE100 Lab 1 - Winter 24 </TITLE>
+<META NAME="Author" CONTENT="Martine Schlag">
+<link rel="shortcut icon" href="/cse/classes/cse100/Fall23/slug-icon.gif">
+<H1> CSE100/L Winter 2024
+</H1>
+<HR>
+<TITLE>CSE100/L - Winter 24</TITLE>
+<img align="left" src="/cse/classes/cse100/Winter24/slug-icon.gif">
+(Last Update:
+              <!-- see man strftime for full format opts-->
+	                Sat Jan  6 08:58:29 2024 PST
+			  <!-- see man strftime for full format opts-->
+			    &nbsp &nbsp &nbsp Local time:
+			         Thu Feb  8 08:05:19 2024 PST
+				 )
+<HR>
+
+<p>
+<style>
+main {
+  max-width: 1000px;
+  min-width: 100px;
+  <!-- background-color: powderblue;-->
+}
+</style>
+
+
+</HEAD>
+<BODY BGCOLOR="#FFFFFE">
+<!-- also Fall 23 -->
+
+<main>
+&nbsp
+<br>
+
+<H2>
+<center>
+CSE100/L Lab 1
+<br>Martine Schlag
+<br>Winter 2024
+</center>
+</H2>
+
+<p>
+<b>Pre-lab due:</b> Thursday January 11 9am PDT in Canvas/GradeScope
+<p>
+<b>Demo due:</b> Thursday January 11 (in-person demo by the end of your lab section)
+<p>
+You should have already completed question 3 of the <a href="prelab1.html">prelab</a> before proceeding with this. 
+<p>
+In this lab you will display an octal digit
+on the rightmost digit of the 7-segment display of the Basys 3 board.  
+<br>The octal digit will correspond to the rightmost three switches.
+<br>A pushbutton will provide the value of DP (the decimal point).
+<ol>
+<li> Read about the 7-Segment Displays in the
+<A HREF="https://reference.digilentinc.com/reference/programmable-logic/basys-3/reference-manual">Basys3  Board Reference Manual</A>.
+<br>The FPGA pin names used for the 7-segment display controls 
+in this manual are <tt> CA,CB,CC,CD,CE,CF,CG,DP,AN3,AN2,AN1,AN0</tt>.
+<p>
+<li> From the prelab you should have equations for the 7-segment controls, <tt> CA,CB,CC,CD,CE,CF,CG</tt>.
+<br>Figure out what the values should be for <tt> AN3,AN2,AN1,AN0</tt>.
+<p>
+<center>
+<IMG SRC="7seg-8.gif"> 
+</center>
+<p>
+<li>Follow these <a href="../new_project/new_project.html">steps</a> to create a project.
+<br><b>Make sure the project is created in the Desktop.</b>
+<p>
+<li>Follow these <a href="../design/design.html">steps</a> to enter and implement your design.
+<br> For this project your inputs should be: &nbsp  &nbsp &nbsp <tt>d2,d1,d0, btnD</tt>.
+<br> The outputs should be:  &nbsp &nbsp &nbsp <tt> CA,CB,CC,CD,CE,CF,CG,DP,AN3,AN2,AN1,AN0</tt>.
+<ol type="a">
+<li> Using the equations you obtained in the pre-lab,
+add <tt>assign</tt> statements for <tt> CA,CB,CC,CD,CE,CF,CG</tt>
+ to your module.
+<br> Add:  &nbsp &nbsp <tt>assign DP = btnD;</tt>
+<br> and <tt>assign</tt> statements for <tt>AN3,AN2,AN1,AN0</tt>.
+<p>
+<li> As described in <a href="../design/design.html">steps</a>,
+you will need to modify the constraints file <b>Basys3_Master.xdc</b> to edit the pin names
+so that they match the inputs/outputs of your module.
+<br>There are two lines for each pin.   
+<br>Uncomment the lines for the pins used in this project and replace
+the pin name with the corresponding input/output name in your module according to
+the tables below.
+<p>
+<DIV ALIGN="LEFT">
+<TABLE CELLPADDING=2 BORDER="1">
+<TR VALIGN="BOT"><TD ALIGN="CENTER" NOWRAP>Input</TD>
+<TD ALIGN="CENTER" NOWRAP> btnD </TD> 
+<TD ALIGN="CENTER" NOWRAP> d0 </TD>
+<TD ALIGN="CENTER" NOWRAP> d1 </TD>
+<TD ALIGN="CENTER" NOWRAP> d2 </TD>
+</TR>
+<TR VALIGN="BOT">
+<TD ALIGN="CENTER" NOWRAP>PIN</TD> 
+<TD ALIGN="CENTER">btnD</sub> </TD>
+<TD ALIGN="CENTER">sw[0]</sub> </TD>
+<TD ALIGN="CENTER">sw[1]</sub> </TD>
+<TD ALIGN="CENTER">sw[2]</sub> </TD>
+</TR>
+</TABLE></DIV>
+<p>
+<DIV ALIGN="LEFT">
+<TABLE CELLPADDING=2 BORDER="1">
+<TR VALIGN="BOT"><TD ALIGN="CENTER" NOWRAP>Output</TD>
+<TD ALIGN="CENTER" NOWRAP> CA </TD> 
+<TD ALIGN="CENTER" NOWRAP> CB </TD> 
+<TD ALIGN="CENTER" NOWRAP> CC </TD>
+<TD ALIGN="CENTER" NOWRAP> CD </TD>
+<TD ALIGN="CENTER" NOWRAP> CE </TD>
+<TD ALIGN="CENTER" NOWRAP> CF </TD>
+<TD ALIGN="CENTER" NOWRAP> CG </TD>
+<TD ALIGN="CENTER" NOWRAP> DP </TD>
+<TD ALIGN="CENTER" NOWRAP> AN0 </TD>
+<TD ALIGN="CENTER" NOWRAP> AN1 </TD>
+<TD ALIGN="CENTER" NOWRAP> AN2 </TD>
+<TD ALIGN="CENTER" NOWRAP> AN3 </TD>
+</TR>
+<TR VALIGN="BOT">
+<TD ALIGN="CENTER" NOWRAP>PIN</TD> 
+<TD ALIGN="CENTER">seg[0]</sub> </TD>
+<TD ALIGN="CENTER">seg[1]</sub> </TD>
+<TD ALIGN="CENTER">seg[2]</sub> </TD>
+<TD ALIGN="CENTER">seg[3]</sub> </TD>
+<TD ALIGN="CENTER">seg[4]</sub> </TD>
+<TD ALIGN="CENTER">seg[5]</sub> </TD>
+<TD ALIGN="CENTER">seg[6]</sub> </TD>
+<TD ALIGN="CENTER">dp</sub> </TD>
+<TD ALIGN="CENTER">an[0]</sub> </TD>
+<TD ALIGN="CENTER">an[1]</sub> </TD>
+<TD ALIGN="CENTER">an[2]</sub> </TD>
+<TD ALIGN="CENTER">an[3]</sub> </TD>
+</TR>
+</TABLE></DIV>
+<!--
+<br> For example,
+<pre>
+#set_property PACKAGE_PIN V17 [get_ports {sw[0]}]					
+	#set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
+</pre>
+should become
+<pre>
+set_property PACKAGE_PIN V17 [get_ports {d0}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {d0}]
+</pre>
+-->
+<p>
+<li>Implement your design as described in <a href="../design/design.html">steps</a>.
+<br>There may be an error that you need to fix.   Check the console window.
+<br>When it successfully generates the bitfile, <b>do not select</b> "Open Implemented Design".
+<p>
+</ol>
+<li>Download the bitfile to the Basys3 board by following the same 
+<a href="../configure/configure.html">steps</a>
+as in the Prelab
+ (but if you already have Vivado open you can just open the Hardware Manager).
+<br>
+The bit file will have the same name
+as your top level module (<i>top_module.bit</i>).
+<p>
+<li>Demonstrate your design to the TA.
+<br>
+<li><a href="../archive/archive.html">archive</a> your project. Files left on the PC
+are not protected. Should it become necessary to re-image that PC, its disks
+will be wiped clean.
+<br>
+<li>
+<blink><b>Important</b></blink> Please remember to turn off the power of
+Basys3 board when you are done. 
+</ol>
+</ul>
+
+</ul>
+
+
+<HR><B>The CSE100/L Web:</B>
+<BR>Copyright 2024; Department of Computer Science and Engineering,
+University of California, Santa Cruz.
+
+<br>Portions of the CSE100/L Web may be reprinted or adapted for academic
+nonprofit purposes, providing the source is accurately quoted and duly
+credited.
+<ADDRESS>
+Comments to:
+<em>
+<a href="&#109;&#97;&#105;&#108;&#116;o:&#109;&#97;&#114;&#116;&#105;ne&#64;&#99;&#115;&#101;&#46;&#117;&#99;&#115;&#99;.&#101;&#100;&#117;">&#109;&#97;&#114;&#116;&#105;ne&#64;&#99;&#115;&#101;&#46;&#117;&#99;&#115;&#99;.&#101;&#100;&#117;</a>
+</em>
+</ADDRESS>
+
+
+
+</BODY>
+</HTML>
