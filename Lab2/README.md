@@ -134,7 +134,7 @@ You will create a module **hex7seg** which takes a 4-bit bus **n\[3:0\]** and pr
     
         The output pin, **digsel** of alternates between high and low at a low frequency.
 
-        Add an instance of **lab2\_digsel** to your top level and connect the ports of **lab2\_digsel** as follows: `.clkin(clkin), .greset(btnR), .digsel(dig\_sel)`.
+        Add an instance of **lab2\_digsel** to your top level and connect the ports of **lab2\_digsel** as follows: `.clkin(clkin), .greset(btnR), .digsel(dig_sel)`.
         
 11.  Now edit your constraints file. Since we used the same names as in the constraints file, you should only need to uncomment the lines corresponding to **sw\[15:0\]**, **btnU**, **btnR**, **seg\[6:0\]**, **dp**, **an\[3:0\]**, and **led\[15:0\]**.  
     For **clkin** uncomment the 3 lines below \## Clock signal near the top of the constraint file and replace **clk** with **clkin** so that these lines are as below:  
