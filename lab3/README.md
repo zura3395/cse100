@@ -118,7 +118,9 @@ An **Edge Detector** will generate a high value for one clock cycle if the past 
     
 6.  Add an instance of the module **labCnt\_clks** to your top level as follows:  
 
-    `labCnt\_clks slowit (.clkin(clkin), .greset(btnR), .clk(clk), .digsel(digsel));`
+    ```verilog
+    labCnt_clks slowit (.clkin(clkin), .greset(btnR), .clk(clk), .digsel(digsel));
+    ```
     
     The signal **clk** is your system clock. The signal **digsel** should be used to advance the Ring Counter; it should not be used as a clock!!!  
     Pushbutton btnR should be connected only to the .greset input of labCnt\_clks, no where else!
@@ -133,7 +135,7 @@ An **Edge Detector** will generate a high value for one clock cycle if the past 
     
     ```verilog
     parameter PERIOD = 10;
-    parameter real DUTY\_CYCLE = 0.5;
+    parameter real DUTY_CYCLE = 0.5;
     parameter OFFSET = 2;
 
     initial    // Clock process for clkin
@@ -142,7 +144,7 @@ An **Edge Detector** will generate a high value for one clock cycle if the past 
             clkin = 1'b1;
         forever
         begin
-            #(PERIOD-(PERIOD\*DUTY\_CYCLE)) clkin = ~clkin;
+            #(PERIOD-(PERIOD\*DUTY_CYCLE)) clkin = ~clkin;
         end
     end
     ```
