@@ -1,0 +1,357 @@
+<HTML>
+    <HEAD>
+       <META NAME="Author" CONTENT="Martine Schlag">
+       <TITLE>CSE100 Lab 4 - Winter 24</TITLE>
+    <META NAME="Author" CONTENT="Martine Schlag">
+    <link rel="shortcut icon" href="/cse/classes/cse100/Fall23/slug-icon.gif">
+    <H1> CSE100/L Winter 2024
+    </H1>
+    <HR>
+    <TITLE>CSE100/L - Winter 24</TITLE>
+    <img align="left" src="/cse/classes/cse100/Winter24/slug-icon.gif">
+    (Last Update:
+                  <!-- see man strftime for full format opts-->
+                        Tue Jan 30 20:53:10 2024 PST
+                  <!-- see man strftime for full format opts-->
+                    &nbsp &nbsp &nbsp Local time:
+                         Thu Feb  8 16:01:44 2024 PST
+                     )
+    <HR>
+    
+    <p>
+    <style>
+    main {
+      max-width: 1000px;
+      min-width: 100px;
+      <!-- background-color: powderblue;-->
+    }
+    </style>
+    
+    
+    </head>
+    <BODY BGCOLOR="#FFFFFF">
+    </HEAD>
+    <main>
+     &nbsp
+    <p>
+    <center>
+    <H2>CSE 100/L Lab 4
+    <br> Stop It
+    <br> Martine Schlag
+    <br> Winter 2024
+    </H2>
+    </center>
+    <p>
+    <p>
+    <b>Prelab due:</b> Tuesday February 6 9am PST.
+    <p>
+    <b>Demo due:</b> Thursday February 8 end of your section.
+    <p>
+    <b>Write-Up due:</b> Friday February 16 Canvas at 11:55pm.
+    <p>
+    <p>
+    In this lab you will implement a state machine as part of a sequential
+    circuit for a game called <i>Stop It</i>.
+    <p>Be sure to complete the <a href="prelab4.html">Prelab</a> so that you
+    can simulate your state machine and components.
+    <br>If you haven't already viewed the video in Yuja on using the simulator in Vivado ("Simulation Example")
+    you will want to do that now.
+    <br>It steps through simulating a multiplexor from creating the testbench to tracking
+    down errors. 
+    <br>When simulating your state machine you will want to add the state bus
+    to your waveform viewer.
+    <br>When you ask for help in the lab, the first question that will
+    be asked is whether you have a simulation showing the error.
+    <br>If you are having trouble running the simulator ask for help.
+    
+    
+    <p>
+    Remember that your design must be synchronous 
+    with <b>the clock</b> signal specified in this lab.  This means that you must
+    <ul>
+    <li> use only <a href="../FDRE/FDRE.html">positive edge-triggered flip-flops</a>,
+    <li> not use asynchronous clears or pre-sets of any sequential elements, 
+    <li> connect only <b>the system clock</b> provided to you to the clock input pins of any sequential components,
+    <li> not connect <b>the system clock</b> to any input pins other than the clock 
+    input pins of sequential components, and
+    <li> and only use the <b>assign</b> statement in your design.
+    </ul>
+    <p>
+    <p>
+    <H3> Overview </H3>
+    <p>
+    You will use the BASYS3 board to implement the following reaction/estimation single player game in
+    which a 5-bit counter counting down is displayed and the player tries to stop it at a specified value.
+    <p>
+    <ol>
+    <li>At the start of each round the game counter is displayed on the rightmost two digits of the BASYS3  7-segment display.
+     The left two digits are off.
+    <li> A Go signal is given (pushbutton btnC is pressed) to start the next round.
+    <li> In each round, a random 5-bit binary value, the target number, is selected and displayed on the two leftmost digits and
+    the 5-bit game counter (still displayed on the rightmost digits) is set to <tt>1F</tt>.
+    <li> After 2 seconds the game counter begins to decrement every quarter second.
+    <li> The game counter will keep decrementing, rolling under to 1F(31 decimal), from 0.
+    <li> When the "stop" signal is asserted (pushbutton btnU) the game counter stops decrementing.
+    <li> At this point if the value of the counter matches the target number, then all 4 display digits flash for four seconds in unison.
+    <li> If the value of the counter does not match the target number, then all 4 display digits flash for four seconds,
+    with the target number and game counter digits alternating as they flash.
+    <li> The flashing continues for four seconds and then the leftmost digits are again blank
+    and a new round can begin with a Go signal.
+    <li> Each time the player succeeds in matching the target, one more led lights up beginning with the rightmost.
+    <li> If all 16 leds are lit, and the target number was matched, then the game has been won.
+    After the digits flashes for 4 seconds, all 16 leds flash, and no button, except btnR will have an 
+    effect.
+    <li> To make the game easier to win (without 17 matches!), pressing btnL will be a cheat
+    switch that will load the switches into the leds (or actually the shift register holding
+    the values of the leds).
+    </ol>
+    <p> 
+    <center>
+    <video  width="540" height="300" src="StopIt.mp4" frameborder="0" controls></video>
+    <!--
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/5gzuxNmI1yU?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+    https://youtu.be/5gzuxNmI1yU5gzuxNmI1yU
+    Video coming here.
+    -->
+    </center>
+    <p>
+    <p>
+    On the BASYS3 board,
+    <ul>
+    <li> PushButton btnC will be used as the Go signal. 
+    <li> PushButton btnU will be the "stop" signal
+    <li> PushButton btnL will load the switches into the led state
+    <li> PushButton btnR will be used as global reset (as usual) and should only be connected
+    to the module <b>qsec_clks</b> described below.
+    used to stop the game counter.
+    <li> You will be given a clock <b>clk</b> and a signal <b>qsec</b> which is <b>high for one clock cycle</b>
+    every 1/4 of a second. 
+    The signal <b>qsec</b> should <B>NOT</B> be used as a clock.  It can be connected
+    to count enable inputs possibly with other logic to control the rate at which a counter 
+    advances, and to a counter to make a score flash.
+    </ul>
+    <p>
+    <p>
+    Below is the block diagram of your entire system; it has three pushbuttons and the BASYS3 clock
+    (<b>clkin</b>) as inputs, and the
+    outputs are for the 7-segment displays and leds.
+    <br> (The BASYS3 clock <b>clkin</b> and global reset <b>btnR</b> are inputs of your top level, 
+    but will not be part of your logic. They will connect only to <b>qsec_clks</b>.)
+    <center>
+    <IMG SRC="lab4_overview.jpg" width="900">
+    </center>
+    <p>
+    <H3> Random Number Generator</H3>
+    <p>
+    You will use a Linear Feedback Shift Register (LFSR) to generate a random 
+    8-bit binary number.
+    Below is an 8-bit linear feedback shift register. 
+    This LFSR is simply an 8-bit shift 
+    register where the input to the first register is the XOR of specific 
+    bits in the register.
+    If all the bits in the registers are 0 then the LFSR output will always be 0's.
+    But otherwise it will go through a sequence of all 255 non-zero states 
+    before it repeats.
+    This sequence is not random, but reading the LFSR at random times 
+    (assuming it cycles through enough states fast enough) 
+    will give you a random 8-bit number in the same way a roulette wheel
+    provides a random outcome. The choice of inputs into the XOR gate is not
+    arbitrary so be sure to use the inputs exactly specified in the figure.
+    <br> To avoid waiting as long as a minute for the Game Counter to reach a target number,
+     we are using only 5 bits from the LFSR as the target number. But you still need
+    the 8-bit linear feedback shift register.  The <tt>run</tt> input advances the LFSR
+    at every clock edge.   When it is low, the LFSR will hold its value.
+    <p>
+    <center>
+    <IMG SRC="LFSR.jpg" width="900">
+    </center>
+    <p>
+    <p>
+    <H3> Game Counter</H3>
+    <p>
+    You will need a counter that can be reset and can count up (hmm, maybe from a recent lab ?).
+    <p>
+    <H3> Time Counter</H3>
+    <p>
+    You will need a counter that can be reset and can count up (hmm, maybe from a recent lab ?).
+    <p>
+    <p>
+    <H3> Display</H3>
+    <p>
+    You will need to display the target number as well as the Game Counter and make them flash
+    appropriately depending on the game state.
+    You can control whether a digit of the display is on or off and make it flash
+    by providing appropriate logic for its AN output.
+    <p>
+    <p>
+    <H3> Led Display</H3>
+    <p>
+    The LEDs can be controlled using a 16-bit shift register with the Shift signal. Each time
+    the target is matched, a 1 will be shifted in. There is also a parallel load input (LD)
+    to load a 16-bit bus.   The Off signal, which forces the LED_Shifter output low, is useful
+    for making the LEDs flash.
+    <p>
+    <p>
+    <H3> State Machine</H3>
+    <p>
+    In the overview diagram there is a block for the state machine you must build.  
+    (You may decide you want additional inputs and/or outputs.)
+    Start by drawing
+    a state diagram.  Make sure you cover all cases for each state.
+    <p>
+    Note that the inputs from the pushbuttons (btnU, btnC, and btnL) 
+    <b>are not synchronized</b> with your clock (they are asynchronous).  
+    You should pass these inputs through a
+    syncronizer (D Flip-Flop) before using them in your circuit.
+    <p>
+    <b>Gratuitous Advice:</b> Getting a state machine right usually requires 
+    several iterations.  
+    It is likely that in demonstrating your design the TA will discover some case 
+    that is not properly handled. Often changes to the state machine are not simple.
+    A complete redesign may be necessary. Trying to patch it by changing one
+    signal here or there, or inserting a gate/FF, or more, almost always makes things worse.
+    Please leave yourself enough time.  Hurrying will introduce more bugs that you will need
+    to hunt down.
+    It is strongly suggested that your entire design be entered
+    and simulating <b>before</b> your second section.
+    <p>
+    <H3> Instructions</H3>
+    <p>
+    <ol>
+    <li>Read all of the instructions below before beginning any design.
+    <p>
+    <li>Read <a href="../fsm/fsm.html">entering a state machine</a> with Verilog.
+    <p>
+    <li> Make the modules for your components and if they have flip flops make sure they
+    initialize to the appropriate values. For example, your LFSR should <b>not</b> start
+    with the contents 00000000 when the global reset is asserted (not GO).  Since the
+    global reset (which we will connect to btnR below) resets all flip-flops to 0 you will
+    need to arrange for at least one of the bits to be 1 on the global reset.
+    <p>
+    <li> Draw a state diagram for your state machine, obtain the 
+    next state and output logic equations.  You'll want to use one-hot encoding.
+    <p>
+    <li> Enter the logic for your next state and output equations using the <b>assign</b>
+    statement and
+    provide flip-flops to hold the present state. 
+    <br>
+    Remember that the global reset will reset all flip-flops. Make sure
+    this will put your state machine into its desired initial state.
+    <p>
+    <li> Simulate your state machine.  It is much easier to catch problems when you 
+    control the FourSecs and TwoSecs signals rather than waiting many clock cycles for 
+    it in the simulation of the whole design.
+    <p>
+    <li>In your top level, connect your state machine, LFSR, counters, 16-bit LED shifter,
+    the inputs and outputs, and anything else you need.  
+    Create a net named <b>clk</b>, connect it to the clock input of your 
+    state machine, LFSR, counters and any other sequential components. 
+    This is the <b>system clock</b> for the design.  It is the only signal
+    which can be used as a clock in your design and it should not be connected
+    to anything other than a clock input.
+    <p>
+    <li> Download <A href="qsec_clks.v">this verilog file</A> and save it as <b>qsec_clks.v</b> 
+    in your project directory.
+    <p>
+    <li> In the Vivado Project Manager, add it to your project.  Make sure you select the
+    option to copy it into your project.
+    <p>
+    <li> Add an instance of the module <b>qsec_clks</b> to your top level as follows:
+    <br>
+    <pre>qsec_clks slowit (.clkin(clkin), .greset(btnR), .clk(clk), .digsel(digsel), .qsec(qsec));</pre>
+    The signal <b>clk</b> is your system clock.  The signal <b>digsel</b> should be
+    used to advance the Ring Counter for the 7-segment displays; it should not be used as a clock!!!
+    <br>The signal <b>qsec</b> is high for one clock cycle each 1/4 second (4 times per second) and  should be
+    used to advance the Time Counter; <b>it should not be used as a clock!!!</b>
+    <p>
+    <li> Simulate your entire  design.  
+    <br> You will need to implement a clock in your test fixture.
+    The signals <b>qsec</b> and <b>digsel</b> will be high every 16<sup>th</sup> cycle of <b>clk</b> during
+    simulation. They are much faster during simulation than when implemented so that
+    less time must elapse during simulation.
+    <br> You should simulate until the signals from your timer go high to make sure 
+    your State Machine and the Time counter are working properly together.
+    <p>
+    <li> Implement your design, configure the FPGA and demonstrate your design 
+    to the TA.
+    <p>
+    <li> Once your working design has been demonstrated, follow 
+    <a href="../submit.html">these directions</a> to submit your project.   
+    The zipped project file must be submitted by the due date of the write-up.
+    <br>(You can continue to improve your project for the write-up if desired,
+    but you should submit the version you demonstrated.) 
+    <p>
+    <li> Remember to <a href="../archive/archive.html">archive</a> your project.
+    Files left on the PC are not protected. 
+    <p>
+    <li>
+    <b>Important</b> Please remember to turn off the power to 
+    BASYS3 board when you are done. 
+    </ol>
+    <p>
+    <p>
+    <p>
+    <H3> Write-Up </H3>
+    <p>
+    See <a href="../writeup.html">Lab Write-Up</a> for instructions on what
+    to include in the written report and how to submit electronically.
+    <br>
+    In the report for Lab 4, be sure to:
+    <ul>
+    <li> Include your state diagram, next state and output logic equations.
+    <br> The diagram can be hand drawn or drawn using with a program(aka app).
+    <p>
+    <li> Describe each state of your machine in words. 
+    <br>
+    Example: "The machine is in state COUNTDW
+    while the Game Counter is counting down. It stays in this state 
+    until the stop signal (btnU) is high."
+    <p>
+    <li> For the appendix you will need to provide screenshots of the Waveform Viewer showing simulation results for each of the scenarios below.
+    <br> The following input and output signals should be included: clk, btnR, btnU, bntC, btnL, sw[], led[], 
+    as well as the LFSR contents, the Time Counter, the state bits of the State Machine. 
+    Display buses as buses in hex.
+    <ol type="a">
+    <li>  Player pressing btnU and matching the target.
+    <li>  Player pressing btnU and not matching the target.
+    <li>  btnL loading the leds for the switches.
+    </ol>
+    (You may make one test bench and simply screenshot the different sections for each of the scenarios.) 
+    </ul>
+    <p>
+    The following supplementary material for Lab 4 should be 
+    submitted electronically as appendices in your report
+    <b>within the one PDF file (not in separate files)</b>.
+    <ol>
+    <li> Print-outs of all of your schematics for the modules.
+    <li> A print-out of all of your Verilog source code.
+    <li> A print-out of the Waveform Viewer showing your simulation results.
+    <li> The scanned notebook pages for this lab.
+    </ol>
+    <p>
+    <b>Don't forget to submit the zipped project file!</b>
+    The zipped project file must be submitted by the due date of the write-up.
+    </ul>
+    <p>
+    
+    
+    <HR><B>The CSE100/L Web:</B>
+    <BR>Copyright 2024; Department of Computer Science and Engineering,
+    University of California, Santa Cruz.
+    
+    <br>Portions of the CSE100/L Web may be reprinted or adapted for academic
+    nonprofit purposes, providing the source is accurately quoted and duly
+    credited.
+    <ADDRESS>
+    Comments to:
+    <em>
+    <a href="&#109;&#97;&#105;&#108;&#116;o:&#109;&#97;&#114;&#116;&#105;ne&#64;&#99;&#115;&#101;&#46;&#117;&#99;&#115;&#99;.&#101;&#100;&#117;">&#109;&#97;&#114;&#116;&#105;ne&#64;&#99;&#115;&#101;&#46;&#117;&#99;&#115;&#99;.&#101;&#100;&#117;</a>
+    </em>
+    </ADDRESS>
+    
+    
+    
+    
+    </BODY>
+    </HTML>
+    
