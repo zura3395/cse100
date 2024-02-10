@@ -44,6 +44,8 @@ You will use the BASYS3 board to implement the following reaction/estimation sin
 11.  If all 16 leds are lit, and the target number was matched, then the game has been won. After the digits flashes for 4 seconds, all 16 leds flash, and no button, except btnR will have an effect.
 12.  To make the game easier to win (without 17 matches!), pressing btnL will be a cheat switch that will load the switches into the leds (or actually the shift register holding the values of the leds).
 
+https://github.com/zura3395/cse100/assets/68401942/97c4827a-0426-4e58-a2a0-976d0078d267
+
 On the BASYS3 board,
 
 *   PushButton btnC will be used as the Go signal.
