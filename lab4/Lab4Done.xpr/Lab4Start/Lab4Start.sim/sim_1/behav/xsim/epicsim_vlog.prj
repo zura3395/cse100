@@ -1,0 +1,18 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Lab4Start.srcs/sources_1/new/LED_shifter.v" \
+"../../../../Lab4Start.srcs/sources_1/new/LFSR.v" \
+"../../../../Lab4Start.srcs/sources_1/imports/AllMySources/countUD5L.v" \
+"../../../../Lab4Start.srcs/sources_1/imports/AllMySources/hex7seg.v" \
+"../../../../Lab4Start.srcs/sources_1/imports/AllMySources/qsec_clks.v" \
+"../../../../Lab4Start.srcs/sources_1/imports/AllMySources/ring_counter.v" \
+"../../../../Lab4Start.srcs/sources_1/imports/AllMySources/selector.v" \
+"../../../../Lab4Start.srcs/sources_1/new/state_machine.v" \
+"../../../../Lab4Start.srcs/sources_1/new/top_level.v" \
+"../../../../Lab4Start.srcs/sim_1/new/epicsim.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
