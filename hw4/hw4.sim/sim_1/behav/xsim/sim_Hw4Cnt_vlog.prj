@@ -1,7 +1,7 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
-"../../../../HW4.srcs/sources_1/new/Hw4Cnt.v" \
-"../../../../HW4.srcs/sim_1/new/sim_Hw4Cnt.v" \
+"../../../../hw4.srcs/sources_1/new/Hw4Cnt.v" \
+"../../../../hw4.srcs/sim_1/new/sim_Hw4Cnt.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"
