@@ -27,11 +27,11 @@ reg clkin;
 reg x;
 
 // Outputs
-wire [2:0] Q;
+wire [5:0] Q;
 wire z;
 
 // Instantiate the Unit Under Test (UUT)
-question4 uut (
+question5 uut (
     .clk(clkin),
     .x(x),
     .Q(Q),
@@ -61,7 +61,7 @@ initial begin
 
     #20; // Wait some time before starting
     x = 1;
-    #160;
+    #30;
     x = 0;
     
     // Finish simulation
