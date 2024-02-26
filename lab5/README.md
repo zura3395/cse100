@@ -1,4 +1,4 @@
-CSE100/l Lab 5  
+CSE100/L Lab 5  
 Competition Stop It
 Martine Schlag  
 Winter 24  
