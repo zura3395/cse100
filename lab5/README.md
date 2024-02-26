@@ -35,7 +35,8 @@ In Lab 4 you implemented the single player training version of _Stop It_. In Lab
 11.  To make the target easier to match, turning on sw[14] slows the game counter so that it decrements every half second instead of quarter second.
 12.  To test the cases where both players press simultaneously, turning on sw[15] will make pressing btnL the same as pressing both btnL and btnR.
 
-  
+https://github.com/zura3395/cse100/assets/68401942/6ce138b7-5f24-45ca-97c3-34ffc61e70d5
+
 (Note that sw[14], not sw[15] as mentioned in the video, slows the game counter.)
 
 On the Basys 3 board,
