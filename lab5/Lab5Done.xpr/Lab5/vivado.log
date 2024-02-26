@@ -1,0 +1,307 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Feb 19 19:24:40 2024
+# Process ID: 3292
+# Current directory: C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2096
+# Log file: C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/vivado.log
+# Journal file: C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Ericson/Downloads/Lab5/Lab5.xpr
+WARNING: [Board 49-91] Board repository path 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store' does not exist, it will not be used to search board files.
+WARNING: [Board 49-91] Board repository path 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store' does not exist, it will not be used to search board files.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1
+[Mon Feb 19 19:28:49 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/synth_1/runme.log
+[Mon Feb 19 19:28:49 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Mon Feb 19 22:43:44 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1
+[Tue Feb 20 09:29:15 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/synth_1/runme.log
+[Tue Feb 20 09:29:15 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Tue Feb 20 09:30:40 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A75B67A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Tue Feb 20 09:53:25 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/synth_1/runme.log
+[Tue Feb 20 09:53:25 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Tue Feb 20 09:55:22 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/synth_1/runme.log
+[Tue Feb 20 09:55:22 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Tue Feb 20 09:57:17 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/synth_1/runme.log
+[Tue Feb 20 09:57:17 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/runme.log
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Tue Feb 20 09:58:25 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/synth_1/runme.log
+[Tue Feb 20 09:58:25 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/runme.log
+reset_run impl_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Tue Feb 20 09:58:57 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/synth_1/runme.log
+[Tue Feb 20 09:58:57 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/runme.log
+close_hw
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A75B67A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Tue Feb 20 10:03:17 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/synth_1/runme.log
+[Tue Feb 20 10:03:17 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab5/Lab5.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Lab5_shifter_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab5/Lab5.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Lab5_shifter_sim_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab5/Lab5.sim/sim_1/behav/xsim'
+"xelab -wto 7446173e24e249ba865972288fe487f1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Lab5_shifter_sim_behav xil_defaultlib.Lab5_shifter_sim xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7446173e24e249ba865972288fe487f1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Lab5_shifter_sim_behav xil_defaultlib.Lab5_shifter_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Ericson/Downloads/Lab5/Lab5.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Lab5_shifter_sim_behav -key {Behavioral:sim_1:Functional:Lab5_shifter_sim} -tclbatch {Lab5_shifter_sim.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source Lab5_shifter_sim.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 330 ns : File "C:/Users/Ericson/Downloads/Lab5/Lab5.srcs/sim_1/new/Lab5_shifter_sim.v" Line 106
+xsim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2020.258 ; gain = 54.293
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Lab5_shifter_sim_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 2020.258 ; gain = 59.551
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab5/Lab5.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Lab5_shifter_sim' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab5/Lab5.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Lab5_shifter_sim_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab5/Lab5.srcs/sources_1/new/Lab5_6bit_shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Lab5_6bit_shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab5/Lab5.srcs/sim_1/new/Lab5_shifter_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Lab5_shifter_sim
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab5/Lab5.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab5/Lab5.sim/sim_1/behav/xsim'
+"xelab -wto 7446173e24e249ba865972288fe487f1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Lab5_shifter_sim_behav xil_defaultlib.Lab5_shifter_sim xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7446173e24e249ba865972288fe487f1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Lab5_shifter_sim_behav xil_defaultlib.Lab5_shifter_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.Lab5_6bit_shifter
+Compiling module xil_defaultlib.Lab5_shifter_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Lab5_shifter_sim_behav
+
+****** Webtalk v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Ericson/Downloads/Lab5/Lab5.sim/sim_1/behav/xsim/xsim.dir/Lab5_shifter_sim_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Feb 20 10:08:11 2024...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 430 ns : File "C:/Users/Ericson/Downloads/Lab5/Lab5.srcs/sim_1/new/Lab5_shifter_sim.v" Line 106
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 2020.258 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Tue Feb 20 10:09:09 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/synth_1/runme.log
+[Tue Feb 20 10:09:09 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A75B67A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Tue Feb 20 10:13:06 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/synth_1/runme.log
+[Tue Feb 20 10:13:06 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab5/Lab5.runs/impl_1/top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+archive_project C:/Users/Ericson/Downloads/Lab5Done.xpr.zip -temp_dir C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-3292-MIA-TAYLOR -force -include_local_ip_cache
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-3292-MIA-TAYLOR' for archiving project
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store'.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [ProjectBase 1-495] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience any problem with archiving the project, please consider setting environment variable $TEMP to a shorter path.
+Current project path is 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-3292-MIA-TAYLOR/PrjAr/_X_'.
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-1212] Importing remotely added design sources and verilog include files (if any)...
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'constrs_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'sim_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sim_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'

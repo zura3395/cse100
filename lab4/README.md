@@ -145,9 +145,9 @@ In the report for Lab 4, be sure to:
     Example: "The machine is in state COUNTDW while the Game Counter is counting down. It stays in this state until the stop signal (btnU) is high."
     
 *   For the appendix you will need to provide screenshots of the Waveform Viewer showing simulation results for each of the scenarios below.  
-    The following input and output signals should be included: clk, btnR, btnU, bntC, btnL, sw\[\], led\[\], as well as the LFSR contents, the Time Counter, the state bits of the State Machine. Display buses as buses in hex.
-    a.  Player pressing btnU and matching the target.
-    b.  Player pressing btnU and not matching the target.
+    The following input and output signals should be included: clk, btnR, btnU, bntC, btnL, sw\[\], led\[\], as well as the LFSR contents, the Time Counter, the state bits of the State Machine. Display buses as buses in hex.  
+    a.  Player pressing btnU and matching the target.  
+    b.  Player pressing btnU and not matching the target.  
     c.  btnL loading the leds for the switches.(You may make one test bench and simply screenshot the different sections for each of the scenarios.)
 
 The following supplementary material for Lab 4 should be submitted electronically as appendices in your report **within the one PDF file (not in separate files)**.

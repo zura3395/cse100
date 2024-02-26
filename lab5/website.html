@@ -1,0 +1,245 @@
+<HTML>
+    <HEAD>
+       <TITLE>CSE100 Lab 5 - Winter 24</TITLE>
+    <META NAME="Author" CONTENT="Martine Schlag">
+    <link rel="shortcut icon" href="/cse/classes/cse100/Fall23/slug-icon.gif">
+    <H1> CSE100/L Winter 2024
+    </H1>
+    <HR>
+    <TITLE>CSE100/L - Winter 24</TITLE>
+    <img align="left" src="/cse/classes/cse100/Winter24/slug-icon.gif">
+    (Last Update:
+                  <!-- see man strftime for full format opts-->
+                        Fri Feb  9 10:03:08 2024 PST
+                  <!-- see man strftime for full format opts-->
+                    &nbsp &nbsp &nbsp Local time:
+                         Tue Feb 20 10:20:55 2024 PST
+                     )
+    <HR>
+    
+    <p>
+    <style>
+    main {
+      max-width: 1000px;
+      min-width: 100px;
+      <!-- background-color: powderblue;-->
+    }
+    </style>
+    
+    
+    </head>
+    </HEAD>
+     &nbsp
+    <p>
+    <center>
+    <H2>CSE100/L Lab 5
+    <br> Competition Stop It
+    <br> Martine Schlag
+    <br> Winter 2024
+    </H2>
+    </center>
+    <p>
+    <br>
+    (Last Update: 
+        <!-- see man strftime for full format opts-->
+          Fri Feb  9 10:03:08 2024
+          )
+    
+    <p>
+    <b>Demo due:</b> Tuesday February 20 end of your section.
+    <p>
+    <p> 
+    In this lab you will again implement a state machine as part of a sequential
+    circuit for the competition version of the <i>Stop It</i> game.
+    <p>
+    Remember that your design must be synchronous 
+    with <b>the clock</b> signal specified in this lab.  This means that you must
+    <ul>
+    <li> use only <a href="../FDRE/FDRE.html">positive edge-triggered flip-flops</a>,
+    <li> not use asynchronous clears or pre-sets of any sequential elements, 
+    <li> connect only <b>the system clock</b> provided to you to the clock input pins of any sequential components,
+    <li> not connect <b>the system clock</b> to any input pins other than the clock 
+    input pins of sequential components, and
+    <li> and only use the <b>assign</b> statement in your design.
+    </ul>
+    <p>
+    <p>
+    <H3> Overview </H3>
+    <p>
+    In Lab 4 you implemented the single player training version of <i>Stop It</i>.
+    In Lab 5 you will implement the two player version of this game.
+    In the two player version,
+    a point is scored by a player if they are first to press their button when 
+    the counter matches the target button,  but they lose a point if the counter did not match.
+    The counter stops as soon as either player presses their button.  
+    If both players press their buttons simultaneously (same clock edge) then either they 
+    both score or lose a point.  Each player starts with 3 points.
+    The game is over when either player reaches 6 points or 0 points.
+    <p>
+    <p>
+    <ol>
+    <li> A Go signal is given (pushbutton btnC is pressed) to start the next round.
+    <li> In each round, a random 5-bit binary value, the target number, is selected and displayed on the two leftmost digits while
+    the 5-bit game counter (still displayed on the rightmost digits) is held at <tt>1F</tt>.
+    <li> After 2 seconds the game counter begins to decrement every quarter second.
+    <li> The game counter will keep decrementing, rolling under to 1F(31 decimal), after 0.
+    <li> When either or both players press their button (pushbuttons btnL and btnR)
+     the game counter stops decrementing.
+    <li> When the buttons are pressed the leds are adjusted as follow:
+    <ol type="a">
+    <li> If the target number matches the counter, then the player who pressed first
+     (or both players if they pressed simultaneously), score a point.   This is indicated
+    by turning on an additional led for that player (or both players).
+    <li> If the target number does not match the counter, then the player who pressed first
+     (or both players if they pressed simultaneously), lose a point.   This is indicated
+    by turning off an led for that player (or both players).
+    </ol>
+    <li> If the target was matched when the counter was stopped then all four digits flash in
+    unison for four seconds. Otherwise the target digits and counter digits alternate as
+    they flash.
+    <li> The flashing continues for four seconds and what happens next depends on whether
+    the game is over. The game is over if either player has 6 leds on
+    or no leds on.
+    <li> When the game is not over, the leftmost digits are again blank
+    and a new round can begin with a Go signal.
+    <li> When the game is over, the leds of the winning player(s) flash.  A player
+    will win if they have 6 leds or they have at least one led and the other player
+    has none.   If both players have no leds on, then they both lost and this is
+    indicated by flashing the DP segments of all four digits.
+    <li> To make the target easier to match, turning on sw[14] slows the game counter so that
+    it decrements every half second instead of quarter second.
+    <li> To test the cases where both players press simultaneously, turning on sw[15] will
+    make pressing btnL the same as pressing both btnL and btnR.
+    </ol>
+    
+    <p> 
+    <center>
+    <video  width="540" height="300" src="CompStopIt.mp4" frameborder="0" controls></video>
+    <!--
+    Video coming here.
+    -->
+    <br>
+    (Note that sw[14], not sw[15] as mentioned in the video, slows the game counter.)
+    </center>
+    <p>
+    <p>
+    On the Basys 3 board,
+    <ul>
+    <li> PushButton btnC will be used as the "Go" signal. 
+    <li> PushButton btnU will be used as global reset and should only be connected
+    to the module <b>qsec_clks</b> described below.
+    <li> PushButtons btnL and btnR will be the buttons used by Player L and Player R.
+    <li> Player R's leds will be led[5:0] with led[2:0] on at the start. 
+    <li> Player L's leds will be led[15:10] with led[15:13] on at the start. 
+    <li> You will be given a clock and a signal <b>qsec</b> which is <b>high for one clock cycle</b>
+    roughly every 1/4 of a second. 
+    The signal <b>qsec</b> should <B>NOT</B> be used as a clock.  It can be connected
+    to clock enable inputs possibly with other logic to control the rate at which a counter 
+    advances.
+    </ul>
+    <p>
+    No overview this time. You probably should make your own.
+    Here's some <b>Gratuitous Advice:</b> 
+    <ol>
+    <li>  This is an extension of Lab 4, so you probably want to start by making a copy of your
+     Lab 4 project in Vivado (use the copy option under the Project menu in Vivado).
+    You will need to modify the state machine and create a new LED processor.
+    <li> You can make a 6 bit shifter that initializes with 3 1's and use two
+    instances of it, one for each player.  (You will need to <i>manually</i> reverse the
+    output of one of them.)  
+    <li> Your state machine does not need to remember the score nor which player pressed
+    first nor won the game. But it does need an input that tells it when the game is 
+    over based on the leds.
+    <li>
+    Getting a state machine right usually requires 
+    several iterations.  
+    It is likely that in demonstrating your design the TA will discover some case 
+    that is not properly handled. Often changes to the state machine are not simple.
+    A complete redesign may be necessary. Trying to patch it by changing one
+    signal here or there, or inserting a gate/FF, or more, almost always makes things worse.
+    Please leave yourself enough time.  Hurrying will introduce more bugs that you will need
+    to hunt down and squash.
+    It is strongly suggested that your entire design be entered
+    and simulating <b>before</b> your second section.
+    </ol>
+    <p>
+    <H3> Instructions</H3>
+    <p>
+    <ol>
+    <li>Read all of the instructions below before beginning any design.
+    <p>
+    <p>
+    <li> Draw a state diagram for your state machine, obtain the 
+    next state and output logic equations.  You'll want to use one-hot encoding.
+    <p>
+    <li> Enter the logic for your next state and output equations using the <b>assign</b>
+    statement and
+    provide flip-flops to hold the present state. 
+    <br>
+    Remember that the global reset will reset all flip-flops. Make sure
+    this will put your state machine into its desired initial state.
+    <br><b>For Lab 5, btnU will be connected to the global reset input.</b>
+    <p>
+    <li> Download <A href="qsec_clks.v">this verilog file</A> and save it as <b>qsec_clks.v</b> 
+    <p>
+    <li> In the Vivado Project Manager, add it to your project.  Make sure you select the
+    option to copy it into your project.
+    <p>
+    <li> Add an instance of the module <b>qsec_clks</b> to your top level as follows:
+    <br>
+    <pre>qsec_clks slowit (.clkin(clkin), .greset(btnU), .clk(clk), .digsel(digsel), .qsec(qsec));</pre>
+    The signal <b>clk</b> is your system clock.  The signal <b>digsel</b> should be
+    used to advance the Ring Counter for the 7-segment displays; it should not be used as a clock!!!
+    <br>The signal <b>qsec</b> is high for one clock cycle each 1/4 second (4 times per second) and  should be
+    used to advance a time Counter; <b>it should not be used as a clock!!!</b>
+    <p>
+    <li> Simulate your entire  design.  
+    <br> You will need to implement a clock in your testbench.
+    The signals <b>qsec</b> and <b>digsel</b> will be high every 16<sup>th</sup> cycle of <b>clk</b> during
+    simulation. They are much faster during simulation than when implemented so that
+    less time must elapse during simulation.
+    <br> You should simulate until the signals from your timer go high to make sure 
+    your State Machine and timer are working properly together.
+    <p>
+    <li> Implement your design, configure the FPGA and demonstrate your design 
+    to the TA.
+    <p>
+    <li> Once your working design has been demonstrated, follow 
+    <a href="../submit.html">these directions</a> to submit your project.   
+    <br>The zipped project file must be submitted no later than <b>February 26</b>.
+    <p>
+    <li> Remember to <a href="../archive/archive.html">archive</a> your project.
+    Files left on the PC are not protected. 
+    <p>
+    <li>
+    <b>Important</b> Please remember to turn off the power to 
+    Basys 3 board when you are done. 
+    </ol>
+    <p>
+    <p>
+    </ol>
+    <p>
+    <b>Don't forget to submit the zipped project file </b>
+    following <a href="../submit.html">these directions</a>.   
+    </ul>
+    <p>
+    
+    
+    <HR><B>The CSE100/L Web:</B>
+    <BR>Copyright 2024; Department of Computer Science and Engineering,
+    University of California, Santa Cruz.
+    
+    <br>Portions of the CSE100/L Web may be reprinted or adapted for academic
+    nonprofit purposes, providing the source is accurately quoted and duly
+    credited.
+    <ADDRESS>
+    Comments to:
+    <em>
+    <a href="&#109;&#97;&#105;&#108;&#116;o:&#109;&#97;&#114;&#116;&#105;ne&#64;&#99;&#115;&#101;&#46;&#117;&#99;&#115;&#99;.&#101;&#100;&#117;">&#109;&#97;&#114;&#116;&#105;ne&#64;&#99;&#115;&#101;&#46;&#117;&#99;&#115;&#99;.&#101;&#100;&#117;</a>
+    </em>
+    </ADDRESS>
+    
+    
+    </BODY>
+    </HTML>
+    
