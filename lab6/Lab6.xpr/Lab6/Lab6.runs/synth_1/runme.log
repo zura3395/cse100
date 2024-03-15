@@ -1,0 +1,788 @@
+
+*** Running vivado
+    with args -log lab6top_level.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab6top_level.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source lab6top_level.tcl -notrace
+Command: synth_design -top lab6top_level -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 16932 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 698.723 ; gain = 177.645
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'lab6top_level' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/lab6top_level.v:23]
+INFO: [Synth 8-6157] synthesizing module 'labVGA_clks' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/Downloads/labVGA_clks.v:24]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/Downloads/labVGA_clks.v:55]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (1#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:39813]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 9.125000 - type: float 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: float 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: float 
+	Parameter CLKOUT0_DIVIDE_F bound to: 36.500000 - type: float 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT1_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT3_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT4_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT5_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT6_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
+	Parameter IS_PSEN_INVERTED bound to: 1'b0 
+	Parameter IS_PSINCDEC_INVERTED bound to: 1'b0 
+	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: float 
+	Parameter REF_JITTER2 bound to: 0.010000 - type: float 
+	Parameter SS_EN bound to: FALSE - type: string 
+	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
+	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (2#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:39813]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (3#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (4#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/Downloads/labVGA_clks.v:55]
+INFO: [Synth 8-6157] synthesizing module 'clkcntrl4' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/Downloads/labVGA_clks.v:188]
+INFO: [Synth 8-6157] synthesizing module 'CB4CE_MXILINX_clkcntrl4' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/Downloads/labVGA_clks.v:304]
+INFO: [Synth 8-6157] synthesizing module 'FTCE_MXILINX_clkcntrl4' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/Downloads/labVGA_clks.v:274]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-6157] synthesizing module 'XOR2' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:81988]
+INFO: [Synth 8-6155] done synthesizing module 'XOR2' (5#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:81988]
+INFO: [Synth 8-6157] synthesizing module 'FDCE' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:13448]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_CLR_INVERTED bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'FDCE' (6#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:13448]
+INFO: [Synth 8-6155] done synthesizing module 'FTCE_MXILINX_clkcntrl4' (7#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/Downloads/labVGA_clks.v:274]
+INFO: [Synth 8-6157] synthesizing module 'AND4' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:562]
+INFO: [Synth 8-6155] done synthesizing module 'AND4' (8#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:562]
+INFO: [Synth 8-6157] synthesizing module 'AND3' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:514]
+INFO: [Synth 8-6155] done synthesizing module 'AND3' (9#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:514]
+INFO: [Synth 8-6157] synthesizing module 'AND2' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:466]
+INFO: [Synth 8-6155] done synthesizing module 'AND2' (10#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:466]
+INFO: [Synth 8-6157] synthesizing module 'VCC' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:81391]
+INFO: [Synth 8-6155] done synthesizing module 'VCC' (11#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:81391]
+INFO: [Synth 8-6155] done synthesizing module 'CB4CE_MXILINX_clkcntrl4' (12#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/Downloads/labVGA_clks.v:304]
+INFO: [Synth 8-6157] synthesizing module 'BUF' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1021]
+INFO: [Synth 8-6155] done synthesizing module 'BUF' (13#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1021]
+INFO: [Synth 8-6155] done synthesizing module 'clkcntrl4' (14#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/Downloads/labVGA_clks.v:188]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/Downloads/labVGA_clks.v:38]
+INFO: [Synth 8-6157] synthesizing module 'STARTUPE2' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:77870]
+	Parameter PROG_USR bound to: FALSE - type: string 
+	Parameter SIM_CCLK_FREQ bound to: 0.000000 - type: float 
+INFO: [Synth 8-6155] done synthesizing module 'STARTUPE2' (15#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:77870]
+INFO: [Synth 8-6155] done synthesizing module 'labVGA_clks' (16#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/Downloads/labVGA_clks.v:24]
+INFO: [Synth 8-6157] synthesizing module 'FDRE' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:13664]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'FDRE' (17#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:13664]
+INFO: [Synth 8-6157] synthesizing module 'state_machine' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v:23]
+INFO: [Synth 8-6157] synthesizing module 'FDRE__parameterized0' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:13664]
+	Parameter INIT bound to: 1'b1 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'FDRE__parameterized0' (17#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:13664]
+INFO: [Synth 8-6155] done synthesizing module 'state_machine' (18#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v:23]
+INFO: [Synth 8-6157] synthesizing module 'pixel_addresser' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/pixel_addresser.v:23]
+INFO: [Synth 8-6157] synthesizing module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/countUD15L.v:23]
+INFO: [Synth 8-6157] synthesizing module 'countUD5L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/countUD5L.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'countUD5L' (19#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/countUD5L.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'countUD15L' (20#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/countUD15L.v:23]
+WARNING: [Synth 8-7023] instance 'Hcounter' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/pixel_addresser.v:35]
+WARNING: [Synth 8-7023] instance 'Vcounter' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/pixel_addresser.v:37]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_addresser' (21#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/pixel_addresser.v:23]
+WARNING: [Synth 8-7023] instance 'time_counter' of module 'countUD15L' has 8 connections declared, but only 4 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/lab6top_level.v:77]
+INFO: [Synth 8-6157] synthesizing module 'lab6_qsec_clk' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/lab6_qsec_clk.v:23]
+WARNING: [Synth 8-7023] instance 'energy_counter' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/lab6_qsec_clk.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'lab6_qsec_clk' (22#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/lab6_qsec_clk.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ten_frame_counter' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/ten_frame_counter.v:23]
+WARNING: [Synth 8-7023] instance 'counter' of module 'countUD5L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/ten_frame_counter.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'ten_frame_counter' (23#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/ten_frame_counter.v:23]
+INFO: [Synth 8-6157] synthesizing module 'border' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/border.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'border' (24#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/border.v:23]
+INFO: [Synth 8-6157] synthesizing module 'energy_bar' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/energy_bar.v:23]
+WARNING: [Synth 8-7023] instance 'energy_counter' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/energy_bar.v:36]
+INFO: [Synth 8-6155] done synthesizing module 'energy_bar' (25#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/energy_bar.v:23]
+INFO: [Synth 8-6157] synthesizing module 'slug_states' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug_states.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'slug_states' (26#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug_states.v:23]
+INFO: [Synth 8-6157] synthesizing module 'slug' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:23]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:48]
+WARNING: [Synth 8-7023] instance 'right_counter' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:42]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:57]
+WARNING: [Synth 8-7023] instance 'left_counter' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'slug' (27#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:23]
+INFO: [Synth 8-6157] synthesizing module 'train_track' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:23]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:48]
+WARNING: [Synth 8-7023] instance 'bottom_counter1' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:42]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:57]
+WARNING: [Synth 8-7023] instance 'top_counter1' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:51]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:66]
+WARNING: [Synth 8-7023] instance 'bottom_counter2' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:60]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:75]
+WARNING: [Synth 8-7023] instance 'top_counter2' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:69]
+INFO: [Synth 8-6157] synthesizing module 'LFSR' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/LFSR.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'LFSR' (28#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/LFSR.v:23]
+INFO: [Synth 8-6157] synthesizing module 'LFSRalpha' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRalpha.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'LFSRalpha' (29#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRalpha.v:23]
+WARNING: [Synth 8-689] width (8) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:102]
+WARNING: [Synth 8-7023] instance 'score_counter' of module 'countUD15L' has 8 connections declared, but only 4 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:98]
+INFO: [Synth 8-6155] done synthesizing module 'train_track' (30#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:23]
+INFO: [Synth 8-6157] synthesizing module 'train_track_sigma' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:23]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:49]
+WARNING: [Synth 8-7023] instance 'bottom_counter1' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:43]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:58]
+WARNING: [Synth 8-7023] instance 'top_counter1' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:52]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:67]
+WARNING: [Synth 8-7023] instance 'bottom_counter2' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:61]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:76]
+WARNING: [Synth 8-7023] instance 'top_counter2' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:70]
+INFO: [Synth 8-6157] synthesizing module 'LFSRbeta' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRbeta.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'LFSRbeta' (31#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRbeta.v:23]
+INFO: [Synth 8-6157] synthesizing module 'LFSRgamma' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRgamma.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'LFSRgamma' (32#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRgamma.v:23]
+WARNING: [Synth 8-689] width (8) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:103]
+WARNING: [Synth 8-7023] instance 'score_counter' of module 'countUD15L' has 8 connections declared, but only 4 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:99]
+INFO: [Synth 8-6155] done synthesizing module 'train_track_sigma' (33#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:23]
+INFO: [Synth 8-6157] synthesizing module 'train_track_delta' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:23]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:49]
+WARNING: [Synth 8-7023] instance 'bottom_counter1' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:43]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:58]
+WARNING: [Synth 8-7023] instance 'top_counter1' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:52]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:67]
+WARNING: [Synth 8-7023] instance 'bottom_counter2' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:61]
+WARNING: [Synth 8-689] width (10) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:76]
+WARNING: [Synth 8-7023] instance 'top_counter2' of module 'countUD15L' has 8 connections declared, but only 6 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:70]
+WARNING: [Synth 8-689] width (8) of port connection 'Q' does not match port width (15) of module 'countUD15L' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:103]
+WARNING: [Synth 8-7023] instance 'score_counter' of module 'countUD15L' has 8 connections declared, but only 4 given [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:99]
+INFO: [Synth 8-6155] done synthesizing module 'train_track_delta' (34#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ring_counter' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/ring_counter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ring_counter' (35#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/ring_counter.v:23]
+INFO: [Synth 8-6157] synthesizing module 'selector' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/selector.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'selector' (36#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/selector.v:23]
+INFO: [Synth 8-6157] synthesizing module 'hex7seg' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/hex7seg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'hex7seg' (37#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/hex7seg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'lab6top_level' (38#1) [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/lab6top_level.v:23]
+WARNING: [Synth 8-3917] design lab6top_level has port an[3] driven by constant 1
+WARNING: [Synth 8-3917] design lab6top_level has port an[2] driven by constant 1
+WARNING: [Synth 8-3917] design lab6top_level has port dp driven by constant 1
+WARNING: [Synth 8-3917] design lab6top_level has port led[13] driven by constant 0
+WARNING: [Synth 8-3917] design lab6top_level has port led[9] driven by constant 0
+WARNING: [Synth 8-3917] design lab6top_level has port led[4] driven by constant 0
+WARNING: [Synth 8-3331] design train_track_sigma has unconnected port GameOver
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[15]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[14]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[13]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[12]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[11]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[10]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[9]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[8]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[7]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[6]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[5]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[4]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[2]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[1]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 764.051 ; gain = 242.973
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 764.051 ; gain = 242.973
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 764.051 ; gain = 242.973
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 51 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/constrs_1/imports/cse100/Basys3_Master.xdc]
+Finished Parsing XDC File [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/constrs_1/imports/cse100/Basys3_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/constrs_1/imports/cse100/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lab6top_level_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/lab6top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 899.832 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 49 instances were transformed.
+  AND2 => LUT2: 12 instances
+  AND3 => LUT3: 6 instances
+  AND4 => LUT4: 6 instances
+  BUF => LUT1: 1 instances
+  XOR2 => LUT2: 24 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 899.832 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 899.832 ; gain = 378.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 899.832 ; gain = 378.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 899.832 ; gain = 378.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 899.832 ; gain = 378.754
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     15 Bit       Adders := 1     
+	   3 Input     10 Bit       Adders := 8     
+	   2 Input     10 Bit       Adders := 6     
+	   3 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 6     
++---XORs : 
+	   2 Input      1 Bit         XORs := 537   
+	   4 Input      1 Bit         XORs := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module lab6top_level 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
+Module countUD5L 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 8     
+Module energy_bar 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     15 Bit       Adders := 1     
+Module slug 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     10 Bit       Adders := 2     
+Module LFSR 
+Detailed RTL Component Info : 
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
+Module LFSRalpha 
+Detailed RTL Component Info : 
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
+Module train_track 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 2     
+Module LFSRbeta 
+Detailed RTL Component Info : 
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
+Module LFSRgamma 
+Detailed RTL Component Info : 
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
+Module train_track_sigma 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 2     
+Module train_track_delta 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design lab6top_level has port an[3] driven by constant 1
+WARNING: [Synth 8-3917] design lab6top_level has port an[2] driven by constant 1
+WARNING: [Synth 8-3917] design lab6top_level has port dp driven by constant 1
+WARNING: [Synth 8-3917] design lab6top_level has port led[13] driven by constant 0
+WARNING: [Synth 8-3917] design lab6top_level has port led[9] driven by constant 0
+WARNING: [Synth 8-3917] design lab6top_level has port led[4] driven by constant 0
+WARNING: [Synth 8-3331] design train_track_sigma has unconnected port GameOver
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[15]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[14]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[13]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[12]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[11]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[10]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[9]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[8]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[7]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[6]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[5]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[4]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[2]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[1]
+WARNING: [Synth 8-3331] design lab6top_level has unconnected port sw[0]
+WARNING: [Synth 8-3332] Sequential element (not_so_slow/slowclk/XLXI_37/I_Q0/I_36_35) is unused and will be removed from module lab6top_level.
+WARNING: [Synth 8-3332] Sequential element (not_so_slow/slowclk/XLXI_37/I_Q1/I_36_35) is unused and will be removed from module lab6top_level.
+WARNING: [Synth 8-3332] Sequential element (not_so_slow/slowclk/XLXI_37/I_Q2/I_36_35) is unused and will be removed from module lab6top_level.
+WARNING: [Synth 8-3332] Sequential element (not_so_slow/slowclk/XLXI_37/I_Q3/I_36_35) is unused and will be removed from module lab6top_level.
+WARNING: [Synth 8-3332] Sequential element (not_so_slow/slowclk/XLXI_44/I_Q0/I_36_35) is unused and will be removed from module lab6top_level.
+WARNING: [Synth 8-3332] Sequential element (not_so_slow/slowclk/XLXI_44/I_Q1/I_36_35) is unused and will be removed from module lab6top_level.
+WARNING: [Synth 8-3332] Sequential element (not_so_slow/slowclk/XLXI_44/I_Q2/I_36_35) is unused and will be removed from module lab6top_level.
+WARNING: [Synth 8-3332] Sequential element (not_so_slow/slowclk/XLXI_44/I_Q3/I_36_35) is unused and will be removed from module lab6top_level.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter0/FF0) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter0/FF1) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter0/FF2) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter0/FF3) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter0/FF4) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter1/FF0) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter1/FF1) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter1/FF2) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter1/FF3) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter1/FF4) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter2/FF0) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter2/FF1) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter2/FF2) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter2/FF3) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (energy_counter/counter2/FF4) is unused and will be removed from module lab6_qsec_clk.
+WARNING: [Synth 8-3332] Sequential element (right_counter/counter2/FF0) is unused and will be removed from module slug.
+WARNING: [Synth 8-3332] Sequential element (right_counter/counter2/FF1) is unused and will be removed from module slug.
+WARNING: [Synth 8-3332] Sequential element (right_counter/counter2/FF2) is unused and will be removed from module slug.
+WARNING: [Synth 8-3332] Sequential element (right_counter/counter2/FF3) is unused and will be removed from module slug.
+WARNING: [Synth 8-3332] Sequential element (right_counter/counter2/FF4) is unused and will be removed from module slug.
+WARNING: [Synth 8-3332] Sequential element (left_counter/counter2/FF0) is unused and will be removed from module slug.
+WARNING: [Synth 8-3332] Sequential element (left_counter/counter2/FF1) is unused and will be removed from module slug.
+WARNING: [Synth 8-3332] Sequential element (left_counter/counter2/FF2) is unused and will be removed from module slug.
+WARNING: [Synth 8-3332] Sequential element (left_counter/counter2/FF3) is unused and will be removed from module slug.
+WARNING: [Synth 8-3332] Sequential element (left_counter/counter2/FF4) is unused and will be removed from module slug.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF0) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF1) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF2) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF3) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF4) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF0) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF1) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF2) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF3) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF4) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter2/counter2/FF0) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter2/counter2/FF1) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter2/counter2/FF2) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter2/counter2/FF3) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter2/counter2/FF4) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (top_counter2/counter2/FF0) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (top_counter2/counter2/FF1) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (top_counter2/counter2/FF2) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (top_counter2/counter2/FF3) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (top_counter2/counter2/FF4) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter1/FF3) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter1/FF4) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter2/FF0) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter2/FF1) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter2/FF2) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter2/FF3) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter2/FF4) is unused and will be removed from module train_track.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF0) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF1) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF2) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF3) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF4) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF0) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF1) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF2) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF3) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF4) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter2/counter2/FF0) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter2/counter2/FF1) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter2/counter2/FF2) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter2/counter2/FF3) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter2/counter2/FF4) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (top_counter2/counter2/FF0) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (top_counter2/counter2/FF1) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (top_counter2/counter2/FF2) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (top_counter2/counter2/FF3) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (top_counter2/counter2/FF4) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter1/FF3) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter1/FF4) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter2/FF0) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter2/FF1) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter2/FF2) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter2/FF3) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (score_counter/counter2/FF4) is unused and will be removed from module train_track_sigma.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF0) is unused and will be removed from module train_track_delta.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF1) is unused and will be removed from module train_track_delta.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF2) is unused and will be removed from module train_track_delta.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF3) is unused and will be removed from module train_track_delta.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter1/counter2/FF4) is unused and will be removed from module train_track_delta.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF0) is unused and will be removed from module train_track_delta.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF1) is unused and will be removed from module train_track_delta.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF2) is unused and will be removed from module train_track_delta.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF3) is unused and will be removed from module train_track_delta.
+WARNING: [Synth 8-3332] Sequential element (top_counter1/counter2/FF4) is unused and will be removed from module train_track_delta.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter2/counter2/FF0) is unused and will be removed from module train_track_delta.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter2/counter2/FF1) is unused and will be removed from module train_track_delta.
+WARNING: [Synth 8-3332] Sequential element (bottom_counter2/counter2/FF2) is unused and will be removed from module train_track_delta.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 899.832 ; gain = 378.754
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:25 . Memory (MB): peak = 899.832 ; gain = 378.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:26 . Memory (MB): peak = 899.832 ; gain = 378.754
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:27 . Memory (MB): peak = 907.562 ; gain = 386.484
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 923.398 ; gain = 402.320
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 923.398 ; gain = 402.320
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 923.398 ; gain = 402.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 923.398 ; gain = 402.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 923.398 ; gain = 402.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 923.398 ; gain = 402.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |AND2       |     8|
+|2     |AND3       |     4|
+|3     |AND4       |     4|
+|4     |BUF        |     1|
+|5     |BUFG       |     3|
+|6     |CARRY4     |    84|
+|7     |LUT1       |    16|
+|8     |LUT2       |   176|
+|9     |LUT3       |    94|
+|10    |LUT4       |   292|
+|11    |LUT5       |   114|
+|12    |LUT6       |   205|
+|13    |MMCME2_ADV |     1|
+|14    |STARTUPE2  |     1|
+|15    |XOR2       |    16|
+|16    |FDCE       |    16|
+|17    |FDRE       |   308|
+|18    |IBUF       |     7|
+|19    |OBUF       |    42|
++------+-----------+------+
+
+Report Instance Areas: 
++------+--------------------+---------------------------+------+
+|      |Instance            |Module                     |Cells |
++------+--------------------+---------------------------+------+
+|1     |top                 |                           |  1392|
+|2     |  framer            |ten_frame_counter          |    12|
+|3     |    counter         |countUD5L_85               |    12|
+|4     |  game              |state_machine              |    14|
+|5     |  left_trains       |train_track_sigma          |   224|
+|6     |    bottom_counter1 |countUD15L_69              |    55|
+|7     |      counter0      |countUD5L_83               |    30|
+|8     |      counter1      |countUD5L_84               |    25|
+|9     |    bottom_counter2 |countUD15L_70              |    50|
+|10    |      counter0      |countUD5L_81               |    26|
+|11    |      counter1      |countUD5L_82               |    24|
+|12    |    num_generator1  |LFSRbeta                   |    17|
+|13    |    num_generator2  |LFSRgamma_71               |    17|
+|14    |    score_counter   |countUD15L_72              |    17|
+|15    |      counter0      |countUD5L_79               |    11|
+|16    |      counter1      |countUD5L_80               |     6|
+|17    |    top_counter1    |countUD15L_73              |    33|
+|18    |      counter0      |countUD5L_77               |    17|
+|19    |      counter1      |countUD5L_78               |    16|
+|20    |    top_counter2    |countUD15L_74              |    35|
+|21    |      counter0      |countUD5L_75               |    19|
+|22    |      counter1      |countUD5L_76               |    16|
+|23    |  middle_trains     |train_track                |   253|
+|24    |    bottom_counter1 |countUD15L_53              |    58|
+|25    |      counter0      |countUD5L_67               |    34|
+|26    |      counter1      |countUD5L_68               |    24|
+|27    |    bottom_counter2 |countUD15L_54              |    51|
+|28    |      counter0      |countUD5L_65               |    28|
+|29    |      counter1      |countUD5L_66               |    23|
+|30    |    num_generator1  |LFSR                       |    20|
+|31    |    num_generator2  |LFSRalpha_55               |    20|
+|32    |    score_counter   |countUD15L_56              |    38|
+|33    |      counter0      |countUD5L_63               |    30|
+|34    |      counter1      |countUD5L_64               |     8|
+|35    |    top_counter1    |countUD15L_57              |    34|
+|36    |      counter0      |countUD5L_61               |    15|
+|37    |      counter1      |countUD5L_62               |    19|
+|38    |    top_counter2    |countUD15L_58              |    32|
+|39    |      counter0      |countUD5L_59               |    14|
+|40    |      counter1      |countUD5L_60               |    18|
+|41    |  movement          |slug_states                |    13|
+|42    |  not_so_slow       |labVGA_clks                |    55|
+|43    |    my_clk_inst     |clk_wiz_0                  |     4|
+|44    |    slowclk         |clkcntrl4                  |    50|
+|45    |      XLXI_38       |CB4CE_MXILINX_clkcntrl4    |    12|
+|46    |        I_Q0        |FTCE_MXILINX_clkcntrl4_49  |     2|
+|47    |        I_Q1        |FTCE_MXILINX_clkcntrl4_50  |     2|
+|48    |        I_Q2        |FTCE_MXILINX_clkcntrl4_51  |     2|
+|49    |        I_Q3        |FTCE_MXILINX_clkcntrl4_52  |     2|
+|50    |      XLXI_39       |CB4CE_MXILINX_clkcntrl4_35 |    12|
+|51    |        I_Q0        |FTCE_MXILINX_clkcntrl4_45  |     2|
+|52    |        I_Q1        |FTCE_MXILINX_clkcntrl4_46  |     2|
+|53    |        I_Q2        |FTCE_MXILINX_clkcntrl4_47  |     2|
+|54    |        I_Q3        |FTCE_MXILINX_clkcntrl4_48  |     2|
+|55    |      XLXI_40       |CB4CE_MXILINX_clkcntrl4_36 |    12|
+|56    |        I_Q0        |FTCE_MXILINX_clkcntrl4_41  |     2|
+|57    |        I_Q1        |FTCE_MXILINX_clkcntrl4_42  |     2|
+|58    |        I_Q2        |FTCE_MXILINX_clkcntrl4_43  |     2|
+|59    |        I_Q3        |FTCE_MXILINX_clkcntrl4_44  |     2|
+|60    |      XLXI_45       |CB4CE_MXILINX_clkcntrl4_37 |    12|
+|61    |        I_Q0        |FTCE_MXILINX_clkcntrl4     |     2|
+|62    |        I_Q1        |FTCE_MXILINX_clkcntrl4_38  |     2|
+|63    |        I_Q2        |FTCE_MXILINX_clkcntrl4_39  |     2|
+|64    |        I_Q3        |FTCE_MXILINX_clkcntrl4_40  |     2|
+|65    |  pixels            |pixel_addresser            |   306|
+|66    |    Hcounter        |countUD15L_27              |   147|
+|67    |      counter0      |countUD5L_32               |    54|
+|68    |      counter1      |countUD5L_33               |    81|
+|69    |      counter2      |countUD5L_34               |    12|
+|70    |    Vcounter        |countUD15L_28              |   145|
+|71    |      counter0      |countUD5L_29               |    75|
+|72    |      counter1      |countUD5L_30               |    57|
+|73    |      counter2      |countUD5L_31               |    13|
+|74    |  right_trains      |train_track_delta          |   226|
+|75    |    bottom_counter1 |countUD15L_12              |    59|
+|76    |      counter0      |countUD5L_25               |    33|
+|77    |      counter1      |countUD5L_26               |    26|
+|78    |    bottom_counter2 |countUD15L_13              |    52|
+|79    |      counter0      |countUD5L_23               |    27|
+|80    |      counter1      |countUD5L_24               |    25|
+|81    |    num_generator1  |LFSRgamma                  |    16|
+|82    |    num_generator2  |LFSRalpha                  |    16|
+|83    |    score_counter   |countUD15L_14              |    16|
+|84    |      counter0      |countUD5L_21               |    11|
+|85    |      counter1      |countUD5L_22               |     5|
+|86    |    top_counter1    |countUD15L_15              |    35|
+|87    |      counter0      |countUD5L_19               |    15|
+|88    |      counter1      |countUD5L_20               |    20|
+|89    |    top_counter2    |countUD15L_16              |    32|
+|90    |      counter0      |countUD5L_17               |    14|
+|91    |      counter1      |countUD5L_18               |    18|
+|92    |  the_bar           |energy_bar                 |    58|
+|93    |    energy_counter  |countUD15L_8               |    58|
+|94    |      counter0      |countUD5L_9                |    21|
+|95    |      counter1      |countUD5L_10               |    22|
+|96    |      counter2      |countUD5L_11               |    15|
+|97    |  the_border        |border                     |     3|
+|98    |  the_slug          |slug                       |   118|
+|99    |    left_counter    |countUD15L_2               |    49|
+|100   |      counter0      |countUD5L_6                |    26|
+|101   |      counter1      |countUD5L_7                |    23|
+|102   |    right_counter   |countUD15L_3               |    69|
+|103   |      counter0      |countUD5L_4                |    51|
+|104   |      counter1      |countUD5L_5                |    18|
+|105   |  time_counter      |countUD15L                 |    44|
+|106   |    counter0        |countUD5L                  |    13|
+|107   |    counter1        |countUD5L_0                |    21|
+|108   |    counter2        |countUD5L_1                |    10|
+|109   |  u_ring_counter    |ring_counter               |     6|
+|110   |  u_selector        |selector                   |     4|
++------+--------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 923.398 ; gain = 402.320
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 136 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:04 ; elapsed = 00:00:26 . Memory (MB): peak = 923.398 ; gain = 266.539
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 923.398 ; gain = 402.320
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 119 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 923.398 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 33 instances were transformed.
+  AND2 => LUT2: 8 instances
+  AND3 => LUT3: 4 instances
+  AND4 => LUT4: 4 instances
+  BUF => LUT1: 1 instances
+  XOR2 => LUT2: 16 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+94 Infos, 185 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:34 . Memory (MB): peak = 923.398 ; gain = 632.215
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 923.398 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/lab6top_level.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file lab6top_level_utilization_synth.rpt -pb lab6top_level_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Mar  7 10:23:54 2024...

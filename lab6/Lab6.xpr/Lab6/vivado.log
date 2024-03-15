@@ -1,0 +1,2172 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Mar  7 01:13:38 2024
+# Process ID: 5540
+# Current directory: C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21936
+# Log file: C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/vivado.log
+# Journal file: C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Ericson/Downloads/Lab6/Lab6.xpr
+WARNING: [Board 49-91] Board repository path 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store' does not exist, it will not be used to search board files.
+WARNING: [Board 49-91] Board repository path 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store' does not exist, it will not be used to search board files.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_slug_states' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_slug_states_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_slug_states_behav -key {Behavioral:sim_1:Functional:sim_slug_states} -tclbatch {sim_slug_states.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source sim_slug_states.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_slug_states_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 940.574 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_slug_states' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_slug_states_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_slug_states_behav -key {Behavioral:sim_1:Functional:sim_slug_states} -tclbatch {sim_slug_states.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source sim_slug_states.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_slug_states_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 940.574 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_slug_states' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_slug_states_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module slug_states
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/new/sim_slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_slug_states
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.slug_states_default
+Compiling module xil_defaultlib.sim_slug_states
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_slug_states_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 940.574 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_slug_states' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_slug_states_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module slug_states
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/new/sim_slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_slug_states
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.slug_states_default
+Compiling module xil_defaultlib.sim_slug_states
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_slug_states_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 940.574 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_slug_states' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_slug_states_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module slug_states
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/new/sim_slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_slug_states
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.slug_states_default
+Compiling module xil_defaultlib.sim_slug_states
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_slug_states_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 940.574 ; gain = 0.000
+run 500 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_slug_states' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_slug_states_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_slug_states_behav -key {Behavioral:sim_1:Functional:sim_slug_states} -tclbatch {sim_slug_states.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source sim_slug_states.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 940.574 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_slug_states_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 940.574 ; gain = 0.000
+run 500 ns
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_slug_states' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_slug_states_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module slug_states
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/new/sim_slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_slug_states
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.slug_states_default
+Compiling module xil_defaultlib.sim_slug_states
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_slug_states_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 940.574 ; gain = 0.000
+run 500 ns
+run 500 ns
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_slug_states' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_slug_states_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module slug_states
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/new/sim_slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_slug_states
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.slug_states_default
+Compiling module xil_defaultlib.sim_slug_states
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_slug_states_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 940.574 ; gain = 0.000
+run 500 ns
+run 500 ns
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 01:22:47 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 01:22:47 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A28385A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+undo
+INFO: [Common 17-17] undo 'set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]'
+redo
+INFO: [Common 17-16] redo 'set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]'
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 01:29:32 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 01:29:32 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 01:36:29 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 01:36:29 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+undo
+INFO: [Common 17-17] undo 'set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]'
+redo
+INFO: [Common 17-16] redo 'set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]'
+reset_run impl_1
+launch_runs impl_1
+[Thu Mar  7 01:39:05 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+reset_run impl_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 01:39:54 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 01:39:54 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 01:41:04 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 01:41:04 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 01:41:53 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 01:41:53 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A28385A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 01:47:53 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 01:47:53 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A28385A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 01:50:56 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 01:50:56 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+close_project
+open_project C:/Users/Ericson/Downloads/Lab6/Lab6.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 01:56:59 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 01:56:59 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A28385A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:01:33 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:01:33 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:03:37 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:03:37 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A28385A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:10:47 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:10:47 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:11:16 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:11:16 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:14:02 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:14:02 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:18:17 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:18:17 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:18:40 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:18:40 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:21:36 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:21:36 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+archive_project C:/Users/Ericson/Downloads/Lab6Ambatuscore.xpr.zip -temp_dir C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-5540-MIA-TAYLOR -force -include_local_ip_cache
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-5540-MIA-TAYLOR' for archiving project
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store'.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [ProjectBase 1-495] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience any problem with archiving the project, please consider setting environment variable $TEMP to a shorter path.
+Current project path is 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-5540-MIA-TAYLOR/PrjAr/_X_'.
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-1209] Adding archive summary file to the project...
+INFO: [Coretcl 2-1214] Preparing project files for archive...
+INFO: [Coretcl 2-1210] Compressing project files and data...
+INFO: [Coretcl 2-1215] Project archived (C:/Users/Ericson/Downloads/Lab6Ambatuscore.xpr.zip)
+INFO: [Coretcl 2-1216] To view the archive summary log in GUI, double click on 'Design Sources->Text->archive_project_summary.txt', or open this file from the archived project directory.
+close_hw
+close [ open C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LSFRbeta.v w ]
+add_files C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LSFRbeta.v
+update_compile_order -fileset sources_1
+close [ open C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_left.v w ]
+add_files C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_left.v
+update_compile_order -fileset sources_1
+close [ open C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_right.v w ]
+add_files C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_right.v
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:32:01 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:32:01 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:32:41 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:32:41 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+reset_run synth_1
+export_ip_user_files -of_objects  [get_files C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LSFRbeta.v] -no_script -reset -force -quiet
+remove_files  C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LSFRbeta.v
+file delete -force C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LSFRbeta.v
+close [ open C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRbeta.v w ]
+add_files C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRbeta.v
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:33:56 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:33:56 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A28385A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+export_ip_user_files -of_objects  [get_files C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_left.v] -no_script -reset -force -quiet
+remove_files  C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_left.v
+file delete -force C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_left.v
+export_ip_user_files -of_objects  [get_files C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_right.v] -no_script -reset -force -quiet
+remove_files  C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_right.v
+file delete -force C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_right.v
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:38:26 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:38:26 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A28385A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+set_property top sim_state_machine [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_state_machine' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_state_machine_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module state_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/new/sim_state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_state_machine
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_state_machine_behav xil_defaultlib.sim_state_machine xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_state_machine_behav xil_defaultlib.sim_state_machine xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3705] select index 3 into 'q' is out of bounds [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v:42]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [VRFC 10-3283] element index 3 into 'q' is out of bounds [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v:42]
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.state_machine_default
+Compiling module xil_defaultlib.sim_state_machine
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_state_machine_behav
+
+****** Webtalk v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim/xsim.dir/sim_state_machine_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Mar  7 02:44:31 2024...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 2196.348 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_state_machine_behav -key {Behavioral:sim_1:Functional:sim_state_machine} -tclbatch {sim_state_machine.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source sim_state_machine.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_state_machine_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 2196.848 ; gain = 0.500
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_state_machine' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_state_machine_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module state_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/new/sim_state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_state_machine
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_state_machine_behav xil_defaultlib.sim_state_machine xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_state_machine_behav xil_defaultlib.sim_state_machine xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3705] select index 3 into 'q' is out of bounds [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v:42]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [VRFC 10-3283] element index 3 into 'q' is out of bounds [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v:42]
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.state_machine_default
+Compiling module xil_defaultlib.sim_state_machine
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_state_machine_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 2196.848 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_state_machine' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_state_machine_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module state_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/new/sim_state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_state_machine
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_state_machine_behav xil_defaultlib.sim_state_machine xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_state_machine_behav xil_defaultlib.sim_state_machine xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.state_machine_default
+Compiling module xil_defaultlib.sim_state_machine
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_state_machine_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2196.848 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_state_machine' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_state_machine_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module state_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/new/sim_state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_state_machine
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_state_machine_behav xil_defaultlib.sim_state_machine xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_state_machine_behav xil_defaultlib.sim_state_machine xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.state_machine_default
+Compiling module xil_defaultlib.sim_state_machine
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_state_machine_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2196.848 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_state_machine' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_state_machine_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module state_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/new/sim_state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_state_machine
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_state_machine_behav xil_defaultlib.sim_state_machine xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_state_machine_behav xil_defaultlib.sim_state_machine xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.state_machine_default
+Compiling module xil_defaultlib.sim_state_machine
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_state_machine_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_state_machine_behav -key {Behavioral:sim_1:Functional:sim_state_machine} -tclbatch {sim_state_machine.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source sim_state_machine.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_state_machine_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2196.848 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_state_machine' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_state_machine_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module state_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/new/sim_state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_state_machine
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_state_machine_behav xil_defaultlib.sim_state_machine xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_state_machine_behav xil_defaultlib.sim_state_machine xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.state_machine_default
+Compiling module xil_defaultlib.sim_state_machine
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_state_machine_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2196.848 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_project
+open_project C:/Users/Ericson/Downloads/Lab6/Lab6.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:58:18 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:58:18 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 02:59:19 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 02:59:19 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 03:02:42 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 03:02:42 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A28385A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 03:05:37 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 03:05:37 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A28385A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 03:08:08 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 03:08:08 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 03:18:01 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 03:18:01 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A28385A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+archive_project C:/Users/Ericson/Downloads/Lab6DelaysDeath.xpr.zip -temp_dir C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-5540-MIA-TAYLOR -force -include_local_ip_cache
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-5540-MIA-TAYLOR' for archiving project
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store'.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [ProjectBase 1-495] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience any problem with archiving the project, please consider setting environment variable $TEMP to a shorter path.
+Current project path is 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-5540-MIA-TAYLOR/PrjAr/_X_'.
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-1209] Adding archive summary file to the project...
+INFO: [Coretcl 2-1214] Preparing project files for archive...
+INFO: [Coretcl 2-1210] Compressing project files and data...
+INFO: [Coretcl 2-1215] Project archived (C:/Users/Ericson/Downloads/Lab6DelaysDeath.xpr.zip)
+INFO: [Coretcl 2-1216] To view the archive summary log in GUI, double click on 'Design Sources->Text->archive_project_summary.txt', or open this file from the archived project directory.
+close_hw
+close [ open C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v w ]
+add_files C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v
+close [ open C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v w ]
+add_files C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v
+update_compile_order -fileset sources_1
+close_project
+open_project C:/Users/Ericson/Downloads/Lab6/Lab6.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v] -no_script -reset -force -quiet
+remove_files  C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v
+file delete -force C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v
+update_compile_order -fileset sources_1
+close [ open C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v w ]
+add_files C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 03:27:57 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 03:27:57 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A28385A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+close [ open C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRgamma.v w ]
+add_files C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRgamma.v
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 03:32:41 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 03:32:41 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 03:34:30 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 03:34:30 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A28385A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A28385A
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Documents/cse100/lab6/testvgaB3.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 03:47:12 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 03:47:12 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A2838BA
+set_property PROGRAM.FILE {C:\Users\Ericson\Documents\cse100\lab6\testvgaB3.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+close_hw
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A2838BA
+set_property PROGRAM.FILE {C:\Users\Ericson\Documents\cse100\lab6\testvgaB3.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 03:56:17 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 03:56:17 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+close_hw
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A2838BA
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 04:02:10 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 04:02:11 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 04:07:06 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 04:07:06 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 04:10:11 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 04:10:11 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A2838BA
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 04:13:22 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 04:13:22 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 04:18:58 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 04:18:58 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 04:25:34 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 04:25:34 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 04:29:33 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 04:29:33 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 04:33:01 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 04:33:01 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 04:38:15 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 04:38:15 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 04:50:01 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 04:50:01 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 04:55:12 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 04:55:12 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 05:01:28 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 05:01:28 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+export_ip_user_files -of_objects  [get_files C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/imports/Downloads/test3.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/imports/Downloads/test3.v
+file delete -force C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/imports/Downloads/test3.v
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -norecurse C:/Users/Ericson/Downloads/test3.v
+update_compile_order -fileset sim_1
+set_property top lab6top_level [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+set_property top testSyncs [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'testSyncs' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testSyncs_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/LFSR.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LFSR
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRalpha.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LFSRalpha
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRbeta.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LFSRbeta
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRgamma.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LFSRgamma
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/border.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module border
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/countUD15L.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module countUD15L
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/countUD5L.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module countUD5L
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/energy_bar.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module energy_bar
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/hex7seg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hex7seg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/lab6_qsec_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab6_qsec_clk
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/lab6top_level.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab6top_level
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/Downloads/labVGA_clks.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module labVGA_clks
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-311] analyzing module clkcntrl4
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4
+INFO: [VRFC 10-311] analyzing module CB4CE_MXILINX_clkcntrl4
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/pixel_addresser.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pixel_addresser
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/ring_counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ring_counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/selector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module selector
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module slug
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module slug_states
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module state_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/ten_frame_counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ten_frame_counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module train_track
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module train_track_delta
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module train_track_sigma
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/imports/Downloads/test3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testSyncs
+INFO: [VRFC 10-311] analyzing module check_the_sync_signals
+INFO: [VRFC 10-311] analyzing module check_the_rgb_signals
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testSyncs_behav xil_defaultlib.testSyncs xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testSyncs_behav xil_defaultlib.testSyncs xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Din' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:47]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:48]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Din' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:56]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:57]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:48]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:57]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:66]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:75]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:102]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:49]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:58]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:67]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:76]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:103]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:49]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:58]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:67]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:76]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:103]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 16 for port 'N' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/lab6top_level.v:222]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=9.125...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.XOR2
+Compiling module unisims_ver.FDCE_default
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.AND4
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.AND3
+Compiling module unisims_ver.AND2
+Compiling module unisims_ver.VCC
+Compiling module xil_defaultlib.CB4CE_MXILINX_clkcntrl4
+Compiling module unisims_ver.BUF
+Compiling module xil_defaultlib.clkcntrl4
+Compiling module unisims_ver.STARTUPE2
+Compiling module xil_defaultlib.labVGA_clks
+Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module xil_defaultlib.state_machine_default
+Compiling module xil_defaultlib.countUD5L
+Compiling module xil_defaultlib.countUD15L
+Compiling module xil_defaultlib.pixel_addresser_default
+Compiling module xil_defaultlib.lab6_qsec_clk
+Compiling module xil_defaultlib.ten_frame_counter
+Compiling module xil_defaultlib.border
+Compiling module xil_defaultlib.energy_bar
+Compiling module xil_defaultlib.slug_states_default
+Compiling module xil_defaultlib.slug
+Compiling module xil_defaultlib.LFSR
+Compiling module xil_defaultlib.LFSRalpha
+Compiling module xil_defaultlib.train_track
+Compiling module xil_defaultlib.LFSRbeta
+Compiling module xil_defaultlib.LFSRgamma
+Compiling module xil_defaultlib.train_track_sigma
+Compiling module xil_defaultlib.train_track_delta
+Compiling module xil_defaultlib.ring_counter
+Compiling module xil_defaultlib.selector
+Compiling module xil_defaultlib.hex7seg
+Compiling module xil_defaultlib.lab6top_level
+Compiling module xil_defaultlib.check_the_sync_signals
+Compiling module xil_defaultlib.check_the_rgb_signals
+Compiling module xil_defaultlib.testSyncs
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testSyncs_behav
+
+****** Webtalk v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim/xsim.dir/testSyncs_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Mar  7 05:07:56 2024...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2932.758 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "testSyncs_behav -key {Behavioral:sim_1:Functional:testSyncs} -tclbatch {testSyncs.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source testSyncs.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'testSyncs_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 2932.758 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'testSyncs' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testSyncs_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/LFSR.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LFSR
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRalpha.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LFSRalpha
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRbeta.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LFSRbeta
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/LFSRgamma.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LFSRgamma
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/border.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module border
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/countUD15L.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module countUD15L
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/countUD5L.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module countUD5L
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/energy_bar.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module energy_bar
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/hex7seg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hex7seg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/lab6_qsec_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab6_qsec_clk
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/lab6top_level.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab6top_level
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/Downloads/labVGA_clks.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module labVGA_clks
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-311] analyzing module clkcntrl4
+INFO: [VRFC 10-311] analyzing module FTCE_MXILINX_clkcntrl4
+INFO: [VRFC 10-311] analyzing module CB4CE_MXILINX_clkcntrl4
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/pixel_addresser.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pixel_addresser
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/ring_counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ring_counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/imports/AllMySources/selector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module selector
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module slug
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module slug_states
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/state_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module state_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/ten_frame_counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ten_frame_counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module train_track
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module train_track_delta
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module train_track_sigma
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/imports/Downloads/test3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testSyncs
+INFO: [VRFC 10-311] analyzing module check_the_sync_signals
+INFO: [VRFC 10-311] analyzing module check_the_rgb_signals
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testSyncs_behav xil_defaultlib.testSyncs xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testSyncs_behav xil_defaultlib.testSyncs xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Din' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:47]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:48]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Din' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:56]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug.v:57]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:48]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:57]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:66]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:75]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track.v:102]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:49]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:58]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:67]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:76]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_sigma.v:103]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:49]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:58]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:67]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:76]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 15 for port 'Q' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/train_track_delta.v:103]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 16 for port 'N' [C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/lab6top_level.v:222]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=9.125...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.XOR2
+Compiling module unisims_ver.FDCE_default
+Compiling module xil_defaultlib.FTCE_MXILINX_clkcntrl4
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.AND4
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.AND3
+Compiling module unisims_ver.AND2
+Compiling module unisims_ver.VCC
+Compiling module xil_defaultlib.CB4CE_MXILINX_clkcntrl4
+Compiling module unisims_ver.BUF
+Compiling module xil_defaultlib.clkcntrl4
+Compiling module unisims_ver.STARTUPE2
+Compiling module xil_defaultlib.labVGA_clks
+Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module xil_defaultlib.state_machine_default
+Compiling module xil_defaultlib.countUD5L
+Compiling module xil_defaultlib.countUD15L
+Compiling module xil_defaultlib.pixel_addresser_default
+Compiling module xil_defaultlib.lab6_qsec_clk
+Compiling module xil_defaultlib.ten_frame_counter
+Compiling module xil_defaultlib.border
+Compiling module xil_defaultlib.energy_bar
+Compiling module xil_defaultlib.slug_states_default
+Compiling module xil_defaultlib.slug
+Compiling module xil_defaultlib.LFSR
+Compiling module xil_defaultlib.LFSRalpha
+Compiling module xil_defaultlib.train_track
+Compiling module xil_defaultlib.LFSRbeta
+Compiling module xil_defaultlib.LFSRgamma
+Compiling module xil_defaultlib.train_track_sigma
+Compiling module xil_defaultlib.train_track_delta
+Compiling module xil_defaultlib.ring_counter
+Compiling module xil_defaultlib.selector
+Compiling module xil_defaultlib.hex7seg
+Compiling module xil_defaultlib.lab6top_level
+Compiling module xil_defaultlib.check_the_sync_signals
+Compiling module xil_defaultlib.check_the_rgb_signals
+Compiling module xil_defaultlib.testSyncs
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testSyncs_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 2932.758 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 34 ms
+run: Time (s): cpu = 00:00:45 ; elapsed = 00:03:49 . Memory (MB): peak = 2932.758 ; gain = 0.000
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Netlist 29-17] Analyzing 86 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.231 . Memory (MB): peak = 3422.320 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.231 . Memory (MB): peak = 3422.320 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 3422.320 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 3532.148 ; gain = 599.391
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+close_design
+open_hw
+archive_project C:/Users/Ericson/Downloads/Lab6Done.xpr.zip -temp_dir C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-5540-MIA-TAYLOR -force -include_local_ip_cache
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-5540-MIA-TAYLOR' for archiving project
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store'.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [ProjectBase 1-495] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience any problem with archiving the project, please consider setting environment variable $TEMP to a shorter path.
+Current project path is 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-5540-MIA-TAYLOR/PrjAr/_X_'.
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-1209] Adding archive summary file to the project...
+INFO: [Coretcl 2-1214] Preparing project files for archive...
+INFO: [Coretcl 2-1210] Compressing project files and data...
+INFO: [Coretcl 2-1215] Project archived (C:/Users/Ericson/Downloads/Lab6Done.xpr.zip)
+INFO: [Coretcl 2-1216] To view the archive summary log in GUI, double click on 'Design Sources->Text->archive_project_summary.txt', or open this file from the archived project directory.
+close_hw
+open_hw
+close_hw
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A2838BA
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property top sim_slug_states [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sim_slug_states' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sim_slug_states_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sources_1/new/slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module slug_states
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Ericson/Downloads/Lab6/Lab6.srcs/sim_1/new/sim_slug_states.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_slug_states
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+"xelab -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 7beb1b8a0f504ba0b4bfa5c95132d681 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim_slug_states_behav xil_defaultlib.sim_slug_states xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.slug_states_default
+Compiling module xil_defaultlib.sim_slug_states
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sim_slug_states_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Ericson/Downloads/Lab6/Lab6.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sim_slug_states_behav -key {Behavioral:sim_1:Functional:sim_slug_states} -tclbatch {sim_slug_states.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source sim_slug_states.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 3556.375 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sim_slug_states_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:14 . Memory (MB): peak = 3556.375 ; gain = 0.000
+update_compile_order -fileset sim_1
+run 34 ms
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 09:59:53 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 09:59:53 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A2838BA
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 10:07:59 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 10:13:42 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 10:13:42 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 10:20:44 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A2838BA
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Mar  7 10:23:16 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/synth_1/runme.log
+[Thu Mar  7 10:23:16 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A2838BA
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Ericson/Downloads/Lab6/Lab6.runs/impl_1/lab6top_level.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+archive_project C:/Users/Ericson/Downloads/Lab6.xpr.zip -temp_dir C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-5540-MIA-TAYLOR -force -include_local_ip_cache
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-5540-MIA-TAYLOR' for archiving project
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/u/estay/.Xilinx/Vivado/2023.1/xhub/board_store/xilinx_board_store'.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [ProjectBase 1-495] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience any problem with archiving the project, please consider setting environment variable $TEMP to a shorter path.
+Current project path is 'C:/Users/Ericson/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-5540-MIA-TAYLOR/PrjAr/_X_'.
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'

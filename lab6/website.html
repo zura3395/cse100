@@ -1,0 +1,398 @@
+<HTML>
+    <HEAD>
+       <TITLE>CSE100 Lab 6 - Winter 2024</TITLE>
+    <META NAME="Author" CONTENT="Martine Schlag">
+    <link rel="shortcut icon" href="/cse/classes/cse100/Fall23/slug-icon.gif">
+    <H1> CSE100/L Winter 2024
+    </H1>
+    <HR>
+    <TITLE>CSE100/L - Winter 24</TITLE>
+    <img align="left" src="/cse/classes/cse100/Winter24/slug-icon.gif">
+    (Last Update:
+                  <!-- see man strftime for full format opts-->
+                        Fri Feb 16 21:36:08 2024 PST
+                  <!-- see man strftime for full format opts-->
+                    &nbsp &nbsp &nbsp Local time:
+                         Wed Mar  6 03:52:12 2024 PST
+                     )
+    <HR>
+    
+    <p>
+    <style>
+    main {
+      max-width: 1000px;
+      min-width: 100px;
+      <!-- background-color: powderblue;-->
+    }
+    </style>
+    
+    
+    </HEAD>
+    
+    <BODY BGCOLOR="#FFFFFE">
+    <main>
+    <center>
+    <H2>CSE 100/L Lab 6
+    <br> Subway Slugging  
+    <br> Martine Schlag
+    <br> Winter 2024 
+    <br>
+    <p>
+    </H2>
+    </center>
+    <p>
+    <p>
+    <b>Demo due:</b> Thursday March 7, 2024 end of your section
+    <p>
+    <b>Write-Up due:</b> Friday March 15, 2024 11:55pm
+    <p>
+    There are <a href="lab6-ec.html">two opportunities</a> to earn extra credit 
+    points towards the lab demo portion
+    of your CSE 100 grade.
+    <p>
+    <b> Description: </b>
+    <p>
+    You will design and implement a version of the game "Subway Slugging" using the BASYS3 
+    board and the VGA monitor connected to it. 
+    In this game, a slug must avoid trains traveling down tracks by jumping between the
+    three tracks or hovering above the middle track.   A collision with a train ends the game
+    and the number of trains the slug has avoided is the score.  The slug can only hover for
+    a limited time.  Once the slug's energy level, displayed on the left, reaches 0 the slug will
+    drop.
+    <p>
+    Initially, the slug and the energy level bar are displayed, but no trains are present.
+    The score, initially 0, is displayed on AN1 and AN0.  
+    Pressing btnC starts the game.
+    No other pushbutton has an effect before the game starts (except the global reset, btnD, of course).
+    When the game starts the trains will start traveling down the tracks and pressing btnL/btnR
+    slides the slug one track to the left/right. If the energy level is not 0 and the slug is in the middle,
+     then the slug will hover while btnU is pressed. But hovering will use up energy. 
+    The slug will drop as soon as btnU is released or the energy level is down to 0.
+    The slug should change color and flash while it is hovering.
+    While the slug is not hovering the energy level increases.
+    Each time a train passes the slug, a point is scored.
+    A crash occurs if the slug is not hovering and overlaps a train. A crash ends the game, and when
+    the game is over,  the slug and all
+    trains stop moving, and the slug flashes. Only the global reset, btnD, will have an
+    effect when the game is over.  Switch sw[3] will be a cheat switch that makes the slug immortal: it
+    can go through trains without crashing.
+    <p> 
+    <p>
+    <p>
+    <center>
+    <video  width="540" height="300" src="SubwaySlugging.mp4" frameborder="0" controls></video>
+    <!--
+    <iframe  width="540" height="300" src="https://www.youtube.com/embed/KS_3e6S2cQo?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+    https://youtu.be/KS_3e6S2cQo
+    Video coming here soon
+    -->
+    </center>
+    <p>
+    <p>
+    <p>
+    <p>
+    <p>
+    <p>
+    <H3> VGA controller </H3>
+    <p>
+    Read the section on the <b>VGA Port</b> in the
+    <a href="https://reference.digilentinc.com/reference/programmable-logic/basys-3/reference-manual#vga_port"> BASYS3 Board Reference Manual</a>
+    <br><b>But do not use the circuit design shown there: it is asynchronous.</b>
+    <p>
+    To control the monitor you must generate two control signals, <b>Hsync</b> and <b>Vsync</b>, as well
+    as the 12 RGB data signals (vgaRed[3:0, vgaBlue[3:0], vgaGreen[3:0]) for each of 
+    the screen's 640 x 480 pixels.
+    The value of these 12 signals are sent one at a time for each pixel,
+    row by row from left to right and top to bottom using one cycle of the 25MHz clock (provided 
+    to you) for each pixel.  
+    There is also some time between rows and
+    between frames (after all 480 rows) which allows the cathode ray to be re-positioned 
+    for the next row or frame.  The Hsync and Vsync signals are used by the monitor
+    to "synchronize" the start of each row and frame; they 
+    are low at fixed times between rows and frames.
+    (<i>Yes the monitors we will use are lcd displays, not cathode ray tubes. But 
+    the protocol used to communicate with these monitors is a standard that lives on.</i>)
+    <p>
+    One way to think of this is to imagine that you have an 800 x 525 grid of pixels as shown below
+    (instead of the 640 x 480 pixels which correspond to the area you see on the monitor).
+    This grid is traversed starting at the top left, location row 0, column 0. 
+    Each row is traversed from left to right
+    followed by the row immediately below it and so on.
+    The region of dimension 640 x 480 at the top left is the <b>Active Region</b>: the pixels
+    in this region corresponds to pixels on the screen. The pixels outside this region correspond
+    to time where the cathode ray would be off the screen. So the L-shaped region outside the 
+    active region is not
+    part of the screen but represents the time needed between rows and frames in terms of pixels.
+    The value of the RGB data signals determine the color displayed for pixels in the Active Region,
+    with one cycle of the 25MHz clock corresponding to a pixel.
+    For a pixel outside the Active Region the 12 RGB data signals should be low.  
+    The horizontal synchronization signal (Hsync) should be low <b>exactly</b> for the 96 pixels in each row 
+    starting with the 656<sup>th</sup> pixel and high for the rest.
+    The vertical synchronization signal (Vsync) should be low <b>exactly</b> for all of the pixels in the 
+    490<sup>th</sup> and 491<sup>st</sup> rows and high for all pixels in all other rows.
+    So Hsync and Vsync are low in only the regions shaded pink and blue below, respectively.
+    <br>
+    <img src="vga1.jpg" width="900">
+    <br>
+    The frame is continuously transmitted to the monitor to refresh the image.
+    Transmitting one frame takes 800 x 525 x 40ns = 16,800,000ns = 16.8ms,
+    so the monitor is being refreshed roughly 60 times per second: at 60Hz.
+    <p>
+    <p>
+    <p>
+    <p>
+    <H3>Game Requirements</H3>
+    <p>
+    <ol>
+    <li> The playing area is the 640 x 480 screen.
+    <li> The border along all 4 edges of the screen is white and 8 pixels wide.
+    <li> The green bar indicating the slug's energy level is near the left border.
+     It is 20 pixels wide and 192 pixels long at the maximum energy level.
+    <li> There are three vertical tracks that are each 60 pixels wide.
+      They are not visible unless you choose
+    to display them. But the trains that will descend along these tracks will be visible.
+    <li> The tracks should be positioned in the right 2/3's of the screen with 10 pixels between
+    adjacent tracks.
+    <li> The slug is a 16 by 16 pixel yellow square (or a shape that fits in this square and
+    touches all 4 sides of the square).
+    The top edge of the slug is in row 360 and the slug is initially in the middle of the middle track. 
+    <li> The slug cannot move or change until the game starts (btnC is pressed).
+    <li> Pressing btnC will start the game, but once the game is started btnC has no further effect.
+    <li> During the game, the slug is either at rest, centered on one of the
+    three tracks, or transitioning between two adjacent tracks. 
+    <li> Pressing btnR starts the transition to the adjacent track on the right (unless the slug is on the rightmost track).
+    <li> Pressing btnL starts the transition to the adjacent track on the left (unless the slug is on the leftmost track).
+    <li> The slug will move horizontally at 2 pixels per frame while it is transitioning.
+    <li> Once a transition has started it will continue unless the game ends (a crash occurs).
+    <li> Pressing btnL or btnR during a transition or while the slug is hovering has no effect. 
+    <li> Holding btnU down while the slug is centered on the middle track and its energy level is not 0  will 
+    cause the slug to hover.
+    <li> The slug changes color and flashes while it is hovering.
+    <li> When btnU is released or the slug's energy level reaches 0, the slug stops hovering.
+    <li> While the slug is hovering its energy decreases level by 1 every frame down to 0.
+    <li> While the slug is not hovering its energy level increases by 1 every frame up to a maximum of 192.
+    <li> Each track will has two trains.
+    <li> Pressing btnC opens the three tracks in the following order: the left track is first,
+    followed by the right track 2 seconds later, and finally the middle track 6 seconds after the right track.
+    <li> When a track is opened, its first train with start.
+    <li> When a train starts, it will pick a random length, wait a random amount of time, and
+    then descend at one pixel per frame until it is completely off the screen.
+    <li> Trains are 60 pixels wide.
+    <li> When the bottom of either train reaches row 400
+    (440 for the middle track) the other train will start in the same manner: picking a random length and
+    waiting a random time before descending.
+    <li> The two trains continually move down their track, restarting each other until the game ends.
+    <li> When the top of the train reaches the row below the slug, a point is scored.
+    <li> The length of the train is 60 + B pixels where B is a randomly selected number between 0 and 63.
+    <li> The random amount of wait time before descending is T frames where T is a randomly selected number between 0 and 127.
+    <li> A crash occurs whenever the slug is not hovering and it overlaps any train by at least 1 pixel.
+    <li> If a crash occurs, the game is over: the trains stop moving, the slug stops moving and flashes,
+     and only btnD can have an effect.
+    <li> When the game is over, pressing btnD will start a new game.
+    </ol>
+    <p>
+    <p>
+    <H3>Project Requirements</H3>
+    <p>
+    <ol>
+    <li> Your design must be synchronous with the system clock provided. 
+    The same rules apply as in previous labs to assure that your design is
+    synchronous
+    with <b>the system clock</b> signal specified in this lab.  This means that you must
+    <ul>
+    <li> use only <a href="../FDRE/FDRE.html">positive edge-triggered flip-flops</a>,
+    <li> not use asynchronous clears or pre-sets of any sequential elements, 
+    <li> connect only <b>the system clock</b> provided to you to the clock input pins of any sequential components,
+    <li> not connect <b>the system clock</b> to any input pins other than the clock 
+    input pins of sequential components, and
+    <li> and only use the <b>assign</b> statement in your design.
+    <li> <b>You may use arithmetic and comparisons within the expressions</b> you assign, but no conditionals.
+    (This can be tricky because of sign issues. Make sure you have enough bits and avoid subtraction.)
+    </ul>
+    <p>
+    <p>
+    </ol>
+    <p>
+    <p>
+    <H3> Specific Instructions</H3>
+    <p>
+    <ol>
+    <li> Start now. You will not be able to complete this lab in just a few days.
+    It will take several days to debug and you will need to download and see your
+    design's output on the monitor to debug it.
+    <p>
+    <li> Download <A href="labVGA_clks.v">this Verilog file</A> and save it
+    as <b>labVGA_clks.v</b>.
+    In the Vivado Project Manager, 
+    add it to your project.  Make sure you select the
+    option to copy it into your project.
+    <p>
+    <li> Add an instance of the module <b>labVGA_clks</b> to your top level as follows:
+    <br>
+    <pre>labVGA_clks not_so_slow (.clkin(clkin), .greset(btnD), .clk(clk), .digsel(digsel));</pre>
+    <b>Note that btnD will be used for the global reset, since btnR has another purpose in this lab.</b>
+    The signal <b>clk</b> is your system clock.  The signal <b>digsel</b> should be
+    used to advance the Ring Counter for the 7-segment displays; it should not be used as a clock!!!
+    <br> When you simulate with labVGA_clks, the clk signal will have the same timing as on the
+    board: it is a 25MHz clock.   Only the signal digsel will be different.
+    <p>
+    <li>  Map out your components (figure out their inputs/outputs and what they do)
+    but don't implement them yet.
+    <p>
+    <li> After implementing your Hsync/Vsync signals and your pixel address 
+    counters, you should simulate your design using 
+    <a href="test3.v">this testbench</a>.
+    Follow the instructions in the comments at the top.
+    This testbench will check that your Hsync and Vsync signals are correct
+    and that your RGB outputs are low outside the active region.
+    You should do this <b>before</b> adding too much other logic to your
+    design since it will take a while just to simulate one frame even 
+    for a simple design in which the screen is just one solid color.
+    <p>
+    <li> <b>Incremental design is highly recommended.</b>  This means implementing and testing
+    your design in phases.  A good first step is to implement
+    a VGA controller that outputs the Hsync and Vsync signals, and provides the pixel
+    address and indicator for the active region while displaying a single color.
+    (You should test your design using the testbench mentioned in the previous step at this
+    point rather than continuing.)
+    
+    Then work on the borders. 
+    Then display the slug, the energy level bar.
+    Then make the energy level bar decrease/increase based on whether btnU is pressed.
+    (This is sufficient to earn Bonus 1). 
+    <p>
+    Next you can make the slug respond to btnL, btnR, and btnU.
+    You will need a state machine to make it transition, and hover
+    only when it is on the middle track.  You'll need to coordinate
+    the hovering and the energy level bar.
+    <p>
+    Next you should work on <b>one</b> track.   Please make a separate module 
+    for a track.   You can start by testing just one and when it is working
+    perfectly, then and only then
+    you should instantiate the other 2 (with different inputs).
+    <b>But first get one track working perfectly before evening thinking about
+    other two.</b> This is the most complicated component.
+    <p>
+    The last piece is to instantiate the other two tracks, and provide a top level
+    state machine to start the tracks, the slug, and end the game when there is a
+    crash.  You'll need a timer for the staggered track opening and to make things flash.
+    <p>
+    <li> To move objects at one pixel per frame and count once per frame
+    you will need a signal <b>frame</b>
+    that is high for one clock cycle once per frame.  A simple way to generate
+    this signal is to edge detect the Vsync signal since it has a single low pulse 
+    in each frame. Another way is to make a signal that is high at one specific
+    pixel address.  Which ever way you choose, it's important that this signal
+    not be high in the active region to avoid updating the position of an
+    object while it is being displayed.
+    <p>
+    <li> There is no <b>qsec</b> signal provided for this lab.
+    Do not try to use the <b>qsec_clks</b>. Instead the "frame" signal
+    mentioned above which is high for one cycle per frame can be
+    used as the up (or down) input of a counter. Counting up to 60 would be one second
+    and 64 is close enough for our purpose.
+    <p>
+    <li>
+    Since you can only simulate a few frames with the simulator, you will need
+    feedback from the monitor to understand what is occurring. 
+    If you are not
+    seeing anything on the monitor or the image is not stable, then you will want
+    to check the timing of your Hsync, Vsync and RGB signals.  (See step 5 above.)
+    <p>
+    <li>
+    If you need to simulate your design to see how your objects interact you will
+    want to generate your own <b>frame</b> signal in the test bench rather 
+    then waiting 420,000 clocks for it to go high.
+    You may find it useful to display certain signals on the leds, or values on
+    the 7 segment display.   You can use the switches to force certain conditions.
+    In the video above, when sw[0] is high, AN1 and AN0 display how many molecules of each type
+    are currently on the right side of the membrane.
+    <p>
+    <li> At some point you might suspect that either your 
+    BASYS3 board or the monitor is
+    not functioning properly. To convince yourself that this is not the case, you
+    can download the bitfile <A href="../testvgaB3.bit">testvgaB3.bit</A> to the board.
+    This will also allow you to check that the VGA, buttons, switches, leds and 7-segment
+    displays are working.
+    <p>
+    <li> Implement your components and state machine.  You may use
+    any component that you have built for your previous CSE100 labs.
+    As usual you may only use the <tt>assign</tt> statement. No conditionals.
+    <b>But in this lab you may use arithmetic and comparisons within these expressions. </b>  
+    Be careful.  This can be tricky because of the precision and sign issues.
+    <p>
+    <li> Demonstrate your working Subway Slugging game to the TA/Tutor/Instructor.
+    <p>
+    <p>
+    <li> Follow <a href="../timing_report/Timing_Report.html">
+    these instructions for obtaining Timing Report.</a>
+    Open the "Timing Summary Report" and use the information there to calculate the
+    maximum frequency at which your design can run.
+    Submit the timing report as part of your write-up.
+    <p>
+    <li>Remember to <a href="../archive/archive.html">archive</a> your project.
+    Files left on the PC are not protected. Should it become necessary to 
+    re-image a PC, its disks will be wiped clean.
+    <p>
+    <li>
+    <b>Important</b> Please remember to turn off the power to 
+    the BASYS3 board when you are done. 
+    </ol>
+    <p>
+    <p>
+    <p>
+    <H3> Write-Up </H3>
+    See <a href="../writeup.html">Lab Write-Up</a> for instructions on what
+    to include in the written report and how to submit electronically.
+    <br>
+    <br> Your write-up for Lab 6 should also include:
+    <ul>
+    <li> The major components of your design and their function.
+    (Include a state diagram for any state machines.)
+    <li> A description of how these components interact.
+    <li> Describe each component's function and how you implemented it (if you did)
+     or how you use it.
+    <li> The maximum clock frequency (MHz) at which your design will operate
+    based on the Timing Report.
+    </ul>
+    <p>
+    The following supplementary material for Lab 6 should be
+    submitted electronically as appendices in your one PDF file:
+    <ol>
+    <li> Print-outs of all of your Verilog modules.
+    <br> 
+    You may omit the modules of any multiplexor/counter/selector modules from
+    your previous CSE 100 labs that you are reusing (without change).
+    <li> A print-out of all of your Verilog testbenches.
+    <li> One screenshot of simulation in which the Vsync (vertical synch signal) goes low.
+    The vertical counter should be displayed so that it is clear the 
+    Vsync signal is low in the correct rows.
+    <li> The Timing Summary Report (just the Design Timing and Clock Summary pages).
+    <li> The scanned notebook pages for this lab.
+    </ol>
+    <b>Don't forget to submit the zipped project file </b>
+    following <a href="../submit.html">these directions</a>.
+    The zipped project file must be submitted by the due date of the write-up.
+    </ul>
+    <p>
+    
+    <HR><B>The CSE100/L Web:</B>
+    <BR>Copyright 2024; Department of Computer Science and Engineering,
+    University of California, Santa Cruz.
+    
+    <br>Portions of the CSE100/L Web may be reprinted or adapted for academic
+    nonprofit purposes, providing the source is accurately quoted and duly
+    credited.
+    <ADDRESS>
+    Comments to:
+    <em>
+    <a href="&#109;&#97;&#105;&#108;&#116;o:&#109;&#97;&#114;&#116;&#105;ne&#64;&#99;&#115;&#101;&#46;&#117;&#99;&#115;&#99;.&#101;&#100;&#117;">&#109;&#97;&#114;&#116;&#105;ne&#64;&#99;&#115;&#101;&#46;&#117;&#99;&#115;&#99;.&#101;&#100;&#117;</a>
+    </em>
+    </ADDRESS>
+    
+    
+    
+    </BODY>
+    </HTML>
+    
+    
