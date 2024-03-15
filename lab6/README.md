@@ -16,6 +16,8 @@ You will design and implement a version of the game "Subway Slugging" using the 
 
 Initially, the slug and the energy level bar are displayed, but no trains are present. The score, initially 0, is displayed on AN1 and AN0. Pressing btnC starts the game. No other pushbutton has an effect before the game starts (except the global reset, btnD, of course). When the game starts the trains will start traveling down the tracks and pressing btnL/btnR slides the slug one track to the left/right. If the energy level is not 0 and the slug is in the middle, then the slug will hover while btnU is pressed. But hovering will use up energy. The slug will drop as soon as btnU is released or the energy level is down to 0. The slug should change color and flash while it is hovering. While the slug is not hovering the energy level increases. Each time a train passes the slug, a point is scored. A crash occurs if the slug is not hovering and overlaps a train. A crash ends the game, and when the game is over, the slug and all trains stop moving, and the slug flashes. Only the global reset, btnD, will have an effect when the game is over. Switch sw\[3\] will be a cheat switch that makes the slug immortal: it can go through trains without crashing.
 
+https://github.com/zura3395/cse100/assets/68401942/58b0806c-3a57-4305-8aa3-c26a3cd8b5a5
+
 ### VGA controller
 
 Read the section on the **VGA Port** in the [BASYS3 Board Reference Manual](https://reference.digilentinc.com/reference/programmable-logic/basys-3/reference-manual#vga_port)  
